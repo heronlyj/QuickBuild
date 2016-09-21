@@ -28,6 +28,7 @@ public struct AlertHelper {
         title       : String? = nil,
         message     : String,
         style       : UIAlertControllerStyle,
+        actionName  : String = "确定",
         action      : AlertAction? = nil,
         cancelAction: AlertAction? = { () -> Void in },
         complaction : AlertAction? = nil)
@@ -35,7 +36,7 @@ public struct AlertHelper {
         
         guard let window = UIApplication.shared.keyWindow, let vc = window.rootViewController else { return }
         
-        showAlert(in: vc, title: title, message: message, style: style, action: action, cancelAction: cancelAction, complaction: complaction)
+        showAlert(in: vc, title: title, message: message, style: style, actionName: actionName, action: action, cancelAction: cancelAction, complaction: complaction)
         
     }
     
