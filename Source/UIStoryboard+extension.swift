@@ -19,4 +19,8 @@ extension UIStoryboard {
         return instantiateViewController(withIdentifier: identifier)
     }
     
+    public var initialer: UIViewController? {
+        return instantiateInitialViewController()
+    }
+    
 }

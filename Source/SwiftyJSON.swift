@@ -1561,7 +1561,7 @@ private let falseObjCType = String(describing: falseNumber.objCType)
 // MARK: - NSNumber: Comparable
 
 extension NSNumber {
-    var isBool:Bool {
+    public var isBool:Bool {
         get {
             #if os(Linux)
                 let type = CFNumberGetType(unsafeBitCast(self, to: CFNumber.self))

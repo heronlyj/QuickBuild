@@ -18,8 +18,8 @@ public class NotificationManager {
     
     public init() {}
     
-    public func registerObserver(name: String, forObject object: Any? = nil, block: @escaping ((Notification!) -> Void)) {
-        let token = NotificationCenter.default.addObserver(forName: Notification.Name(name), object: object, queue: nil, using: block)
+    public func addObserver(forName name: Notification.Name, forObject object: Any? = nil, block: @escaping ((Notification!) -> Void)) {
+        let token = NotificationCenter.default.addObserver(forName: name, object: object, queue: nil, using: block)
         observerTokens.append(token)
     }
     
@@ -30,11 +30,11 @@ public class NotificationManager {
         observerTokens = []
     }
     
-    public static func postNotification(name: String, userInfo: [AnyHashable: Any]? ) {
-        NotificationCenter.default.post(name: Notification.Name(rawValue: name), object: nil, userInfo: userInfo)
+    public static func post(name: Notification.Name, userInfo: [AnyHashable: Any]? ) {
+        NotificationCenter.default.post(name: name, object: nil, userInfo: userInfo)
     }
-    public static func postNotification(name: String) {
-        NotificationCenter.default.post(name: Notification.Name(rawValue: name), object: nil)
+    public static func post(name: Notification.Name) {
+        NotificationCenter.default.post(name: name, object: nil)
     }
     
 }
