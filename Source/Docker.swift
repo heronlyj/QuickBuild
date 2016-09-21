@@ -9,8 +9,8 @@
 import Foundation
 
 public class Docker<T> {
-    public var v: T
-    public init(v: T) {
-        self.v = v
+    public var value: T
+    public init(value: T) {
+        self.value = value
     }
 }

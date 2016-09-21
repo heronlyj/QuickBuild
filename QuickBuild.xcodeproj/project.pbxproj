@@ -19,6 +19,13 @@
 		2C3B13A51D9230DE0030BFDC /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B13A41D9230DE0030BFDC /* Timer.swift */; };
 		2C3B13A71D9231860030BFDC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B13A61D9231860030BFDC /* SwiftyJSON.swift */; };
 		2C3B13A91D9232390030BFDC /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B13A81D9232390030BFDC /* Random.swift */; };
+		2C9F009F1D9234DF0077C508 /* UIStoryboard+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F009E1D9234DF0077C508 /* UIStoryboard+extension.swift */; };
+		2C9F00A11D9235350077C508 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F00A01D9235350077C508 /* UIView+extension.swift */; };
+		2C9F00A51D923CDF0077C508 /* ReuseView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F00A41D923CDF0077C508 /* ReuseView+extension.swift */; };
+		2CD572221D926280001B4169 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD572211D926280001B4169 /* String+extension.swift */; };
+		2CD572241D9264CC001B4169 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD572231D9264CC001B4169 /* AlertHelper.swift */; };
+		2CD572261D9265AB001B4169 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD572251D9265AB001B4169 /* Helper.swift */; };
+		2CD572281D926E1A001B4169 /* UIScreen+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD572271D926E1A001B4169 /* UIScreen+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		2C3B13A41D9230DE0030BFDC /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		2C3B13A61D9231860030BFDC /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		2C3B13A81D9232390030BFDC /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		2C9F009E1D9234DF0077C508 /* UIStoryboard+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+extension.swift"; sourceTree = "<group>"; };
+		2C9F00A01D9235350077C508 /* UIView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
+		2C9F00A41D923CDF0077C508 /* ReuseView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReuseView+extension.swift"; sourceTree = "<group>"; };
+		2CD572211D926280001B4169 /* String+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		2CD572231D9264CC001B4169 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		2CD572251D9265AB001B4169 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		2CD572271D926E1A001B4169 /* UIScreen+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,15 +122,22 @@
 		2C3B13951D9227160030BFDC /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2C3B139E1D922DC00030BFDC /* Array+extension.swift */,
 				2C3B139C1D922C7D0030BFDC /* Docker.swift */,
+				2C3B13A01D922E9F0030BFDC /* Int+extension.swift */,
 				2C3B13981D9229610030BFDC /* Listener.swift */,
 				2C3B139A1D922B980030BFDC /* NotificationManager.swift */,
-				2C3B139E1D922DC00030BFDC /* Array+extension.swift */,
-				2C3B13A01D922E9F0030BFDC /* Int+extension.swift */,
-				2C3B13A21D922F4F0030BFDC /* SortAble.swift */,
-				2C3B13A41D9230DE0030BFDC /* Timer.swift */,
-				2C3B13A61D9231860030BFDC /* SwiftyJSON.swift */,
 				2C3B13A81D9232390030BFDC /* Random.swift */,
+				2C9F00A41D923CDF0077C508 /* ReuseView+extension.swift */,
+				2C3B13A21D922F4F0030BFDC /* SortAble.swift */,
+				2CD572211D926280001B4169 /* String+extension.swift */,
+				2C3B13A61D9231860030BFDC /* SwiftyJSON.swift */,
+				2C3B13A41D9230DE0030BFDC /* Timer.swift */,
+				2C9F009E1D9234DF0077C508 /* UIStoryboard+extension.swift */,
+				2C9F00A01D9235350077C508 /* UIView+extension.swift */,
+				2CD572231D9264CC001B4169 /* AlertHelper.swift */,
+				2CD572251D9265AB001B4169 /* Helper.swift */,
+				2CD572271D926E1A001B4169 /* UIScreen+extension.swift */,
 			);
 			name = Source;
 			path = source;
@@ -235,15 +256,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C9F00A51D923CDF0077C508 /* ReuseView+extension.swift in Sources */,
 				2C3B139B1D922B980030BFDC /* NotificationManager.swift in Sources */,
+				2CD572261D9265AB001B4169 /* Helper.swift in Sources */,
 				2C3B139D1D922C7D0030BFDC /* Docker.swift in Sources */,
 				2C3B13A51D9230DE0030BFDC /* Timer.swift in Sources */,
+				2CD572241D9264CC001B4169 /* AlertHelper.swift in Sources */,
 				2C3B13A71D9231860030BFDC /* SwiftyJSON.swift in Sources */,
 				2C3B13A11D922E9F0030BFDC /* Int+extension.swift in Sources */,
 				2C3B13A31D922F4F0030BFDC /* SortAble.swift in Sources */,
+				2CD572281D926E1A001B4169 /* UIScreen+extension.swift in Sources */,
+				2C9F009F1D9234DF0077C508 /* UIStoryboard+extension.swift in Sources */,
 				2C3B13991D9229610030BFDC /* Listener.swift in Sources */,
 				2C3B139F1D922DC00030BFDC /* Array+extension.swift in Sources */,
 				2C3B13A91D9232390030BFDC /* Random.swift in Sources */,
+				2C9F00A11D9235350077C508 /* UIView+extension.swift in Sources */,
+				2CD572221D926280001B4169 /* String+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +407,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heronlyj.QuickBuild;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -401,6 +430,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DRELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heronlyj.QuickBuild;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
