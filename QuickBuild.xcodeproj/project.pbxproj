@@ -10,6 +10,15 @@
 		2C3B13851D9226E90030BFDC /* QuickBuild.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3B137B1D9226E90030BFDC /* QuickBuild.framework */; };
 		2C3B138A1D9226E90030BFDC /* QuickBuildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B13891D9226E90030BFDC /* QuickBuildTests.swift */; };
 		2C3B138C1D9226E90030BFDC /* QuickBuild.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3B137E1D9226E90030BFDC /* QuickBuild.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C3B13991D9229610030BFDC /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B13981D9229610030BFDC /* Listener.swift */; };
+		2C3B139B1D922B980030BFDC /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B139A1D922B980030BFDC /* NotificationManager.swift */; };
+		2C3B139D1D922C7D0030BFDC /* Docker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B139C1D922C7D0030BFDC /* Docker.swift */; };
+		2C3B139F1D922DC00030BFDC /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B139E1D922DC00030BFDC /* Array+extension.swift */; };
+		2C3B13A11D922E9F0030BFDC /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B13A01D922E9F0030BFDC /* Int+extension.swift */; };
+		2C3B13A31D922F4F0030BFDC /* SortAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B13A21D922F4F0030BFDC /* SortAble.swift */; };
+		2C3B13A51D9230DE0030BFDC /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B13A41D9230DE0030BFDC /* Timer.swift */; };
+		2C3B13A71D9231860030BFDC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B13A61D9231860030BFDC /* SwiftyJSON.swift */; };
+		2C3B13A91D9232390030BFDC /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B13A81D9232390030BFDC /* Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +38,15 @@
 		2C3B13841D9226E90030BFDC /* QuickBuildTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickBuildTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3B13891D9226E90030BFDC /* QuickBuildTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickBuildTests.swift; sourceTree = "<group>"; };
 		2C3B138B1D9226E90030BFDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C3B13981D9229610030BFDC /* Listener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Listener.swift; path = Source/Listener.swift; sourceTree = SOURCE_ROOT; };
+		2C3B139A1D922B980030BFDC /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		2C3B139C1D922C7D0030BFDC /* Docker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Docker.swift; sourceTree = "<group>"; };
+		2C3B139E1D922DC00030BFDC /* Array+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
+		2C3B13A01D922E9F0030BFDC /* Int+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+extension.swift"; sourceTree = "<group>"; };
+		2C3B13A21D922F4F0030BFDC /* SortAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortAble.swift; sourceTree = "<group>"; };
+		2C3B13A41D9230DE0030BFDC /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		2C3B13A61D9231860030BFDC /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		2C3B13A81D9232390030BFDC /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +71,7 @@
 		2C3B13711D9226E90030BFDC = {
 			isa = PBXGroup;
 			children = (
+				2C3B13951D9227160030BFDC /* Source */,
 				2C3B137D1D9226E90030BFDC /* QuickBuild */,
 				2C3B13881D9226E90030BFDC /* QuickBuildTests */,
 				2C3B137C1D9226E90030BFDC /* Products */,
@@ -84,6 +103,23 @@
 				2C3B138B1D9226E90030BFDC /* Info.plist */,
 			);
 			path = QuickBuildTests;
+			sourceTree = "<group>";
+		};
+		2C3B13951D9227160030BFDC /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2C3B139C1D922C7D0030BFDC /* Docker.swift */,
+				2C3B13981D9229610030BFDC /* Listener.swift */,
+				2C3B139A1D922B980030BFDC /* NotificationManager.swift */,
+				2C3B139E1D922DC00030BFDC /* Array+extension.swift */,
+				2C3B13A01D922E9F0030BFDC /* Int+extension.swift */,
+				2C3B13A21D922F4F0030BFDC /* SortAble.swift */,
+				2C3B13A41D9230DE0030BFDC /* Timer.swift */,
+				2C3B13A61D9231860030BFDC /* SwiftyJSON.swift */,
+				2C3B13A81D9232390030BFDC /* Random.swift */,
+			);
+			name = Source;
+			path = source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +185,7 @@
 					2C3B137A1D9226E90030BFDC = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3ZH3G7NDJZ;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					2C3B13831D9226E90030BFDC = {
@@ -198,6 +235,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3B139B1D922B980030BFDC /* NotificationManager.swift in Sources */,
+				2C3B139D1D922C7D0030BFDC /* Docker.swift in Sources */,
+				2C3B13A51D9230DE0030BFDC /* Timer.swift in Sources */,
+				2C3B13A71D9231860030BFDC /* SwiftyJSON.swift in Sources */,
+				2C3B13A11D922E9F0030BFDC /* Int+extension.swift in Sources */,
+				2C3B13A31D922F4F0030BFDC /* SortAble.swift in Sources */,
+				2C3B13991D9229610030BFDC /* Listener.swift in Sources */,
+				2C3B139F1D922DC00030BFDC /* Array+extension.swift in Sources */,
+				2C3B13A91D9232390030BFDC /* Random.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +368,7 @@
 		2C3B13901D9226E90030BFDC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3ZH3G7NDJZ;
@@ -330,10 +377,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = QuickBuild/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heronlyj.QuickBuild;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +390,7 @@
 		2C3B13911D9226E90030BFDC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3ZH3G7NDJZ;
@@ -349,6 +399,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = QuickBuild/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heronlyj.QuickBuild;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -360,6 +411,7 @@
 		2C3B13931D9226E90030BFDC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 3ZH3G7NDJZ;
 				INFOPLIST_FILE = QuickBuildTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +424,7 @@
 		2C3B13941D9226E90030BFDC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 3ZH3G7NDJZ;
 				INFOPLIST_FILE = QuickBuildTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -400,6 +453,7 @@
 				2C3B13911D9226E90030BFDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C3B13921D9226E90030BFDC /* Build configuration list for PBXNativeTarget "QuickBuildTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +462,7 @@
 				2C3B13941D9226E90030BFDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
