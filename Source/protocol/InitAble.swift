@@ -8,17 +8,16 @@
 
 import Foundation
 
-
 /**
  *  给所有 实现 此协议的对象 扩展一个 一次初始化一个数组的 静态方法
  */
-protocol InitAble {
+public protocol InitAble {
     init(data: Any)
 }
 
-extension InitAble {
+public extension InitAble {
     
-    static func initWithArr(data: Any) -> [Self] {
+    public static func initWithArr(data: Any) -> [Self] {
         guard let list = data as? [Any] else { return [] }
         return list.map { Self(data: $0) }
     }

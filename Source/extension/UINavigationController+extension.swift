@@ -12,6 +12,7 @@ protocol PopControlAble {
     func shouldPop(controller: UINavigationController) -> Bool
 }
 
+// 使用了全局变量来替代单例效果
 fileprivate var pop_swizzleInited: Bool = false
 
 extension UINavigationController: UIGestureRecognizerDelegate {
@@ -22,75 +23,67 @@ extension UINavigationController: UIGestureRecognizerDelegate {
     
     // 初始化的时候 交换方法
     override open class func initialize() {
+        
         if self != UINavigationController.self {
             return
         }
-//        pop_swizzleAction()
         
-        if !pop_swizzleInited {
-            let cls: AnyClass! = UINavigationController.self
-            
-            // 虽然 UINavigationController 已经实现了 UINavigationBarDelegate 但是这里不能省略前的，会报错
-            let originalSelector = #selector(UINavigationBarDelegate.navigationBar(_:shouldPop:))
-            let swizzledSelector = #selector(pop_navigationBar(navigationBar:shouldPop:))
-            
-            let originalMethod = class_getInstanceMethod(cls, originalSelector)
-            let swizzledMethod = class_getInstanceMethod(cls, swizzledSelector)
-            
-            let didAddMethod = class_addMethod(
+        guard !pop_swizzleInited else { return }
+        
+        let cls: AnyClass! = UINavigationController.self
+        
+        // 虽然 UINavigationController 已经实现了 UINavigationBarDelegate 但是这里不能省略前的，会报错
+        let originalSelector = #selector(UINavigationBarDelegate.navigationBar(_:shouldPop:))
+        let swizzledSelector = #selector(pop_navigationBar(navigationBar:shouldPop:))
+        
+        let originalMethod = class_getInstanceMethod(cls, originalSelector)
+        let swizzledMethod = class_getInstanceMethod(cls, swizzledSelector)
+        
+        let didAddMethod = class_addMethod(
+            cls,
+            originalSelector,
+            method_getImplementation(swizzledMethod),
+            method_getTypeEncoding(swizzledMethod)
+        )
+        
+        if didAddMethod {
+            class_replaceMethod(
                 cls,
-                originalSelector,
-                method_getImplementation(swizzledMethod),
-                method_getTypeEncoding(swizzledMethod)
+                swizzledSelector,
+                method_getImplementation(originalMethod),
+                method_getTypeEncoding(originalMethod)
             )
-            
-            if didAddMethod {
-                class_replaceMethod(
-                    cls,
-                    swizzledSelector,
-                    method_getImplementation(originalMethod),
-                    method_getTypeEncoding(originalMethod)
-                )
-            } else {
-                method_exchangeImplementations(originalMethod, swizzledMethod)
-            }
-            
-            
-            let originalGestureSelector = #selector(viewWillAppear(_:))
-            let swizzledGestureSelector = #selector(pop_viewWillAppear(animated:))
-            
-            let originalGestureMethod = class_getInstanceMethod(cls, originalGestureSelector)
-            let swizzledGestureMethod = class_getInstanceMethod(cls, swizzledGestureSelector)
-            
-            let didAddGestureMethod = class_addMethod(
-                cls,
-                originalGestureSelector,
-                method_getImplementation(swizzledGestureMethod),
-                method_getTypeEncoding(swizzledGestureMethod)
-            )
-            
-            if didAddGestureMethod {
-                class_replaceMethod(
-                    cls,
-                    swizzledGestureSelector,
-                    method_getImplementation(originalGestureMethod),
-                    method_getTypeEncoding(originalGestureMethod)
-                )
-            } else {
-                method_exchangeImplementations(originalGestureMethod, swizzledGestureMethod)
-            }
-            
-            pop_swizzleInited = true
+        } else {
+            method_exchangeImplementations(originalMethod, swizzledMethod)
         }
+        
+        
+        let originalGestureSelector = #selector(viewWillAppear(_:))
+        let swizzledGestureSelector = #selector(pop_viewWillAppear(animated:))
+        
+        let originalGestureMethod = class_getInstanceMethod(cls, originalGestureSelector)
+        let swizzledGestureMethod = class_getInstanceMethod(cls, swizzledGestureSelector)
+        
+        let didAddGestureMethod = class_addMethod(
+            cls,
+            originalGestureSelector,
+            method_getImplementation(swizzledGestureMethod),
+            method_getTypeEncoding(swizzledGestureMethod)
+        )
+        
+        if didAddGestureMethod {
+            class_replaceMethod(
+                cls,
+                swizzledGestureSelector,
+                method_getImplementation(originalGestureMethod),
+                method_getTypeEncoding(originalGestureMethod)
+            )
+        } else {
+            method_exchangeImplementations(originalGestureMethod, swizzledGestureMethod)
+        }
+        
+        pop_swizzleInited = true
     }
-    
-//    class func pop_swizzleAction() {
-//        struct pop_swizzleToken {
-//            static var onceToken : dispatch_once_t = 0
-//        }
-//        dispatch_once(&pop_swizzleToken.onceToken) {
-//        }
-//    }
     
     func pop_viewWillAppear(animated: Bool) {
         self.pop_viewWillAppear(animated: animated)
