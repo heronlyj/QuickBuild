@@ -52,12 +52,12 @@ public struct AlertHelper {
         complaction      : AlertAction? = nil)
     {
         
-        dispatch_async_safely_main_queue {
+        DispatchQueue.safeMain {
             
             let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
             
             let alertAction = UIAlertAction(title: actionName, style: UIAlertActionStyle.default) { _ in
-                dispatch_async_safely_main_queue { _ in
+                DispatchQueue.safeMain { _ in
                     if let action = action {
                         action()
                     }
@@ -112,14 +112,14 @@ public struct AlertHelper {
         actions        : [AlertActionItem])
     {
         
-        dispatch_async_safely_main_queue {
+        DispatchQueue.safeMain {
             
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
             
             for actionItem in actions {
                 
                 let alertAction = UIAlertAction(title: actionItem.name, style: UIAlertActionStyle.default) { _ in
-                    dispatch_async_safely_main_queue{
+                    DispatchQueue.safeMain{
                         actionItem.action()
                     }
                 }
@@ -143,7 +143,7 @@ public struct AlertHelper {
         action         : @escaping (String) -> Void)
     {
         
-        dispatch_async_safely_main_queue { _ in
+        DispatchQueue.safeMain { _ in
             
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
@@ -155,7 +155,7 @@ public struct AlertHelper {
                     let text = firstTextField.text
                     else { return }
                 
-                dispatch_async_safely_main_queue { _ in
+                DispatchQueue.safeMain { _ in
                     action(text)
                 }
                 
@@ -182,7 +182,7 @@ public struct AlertHelper {
         completeAction : @escaping TextFieldAlertActionItem)
     {
         
-        dispatch_async_safely_main_queue { _ in
+        DispatchQueue.safeMain { _ in
             
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
@@ -190,7 +190,7 @@ public struct AlertHelper {
             let alertAction = UIAlertAction(title: "确定", style: .default) { _ in
                 
                 guard let textFields = alertController.textFields else {
-                    dispatch_async_safely_main_queue { _ in
+                    DispatchQueue.safeMain { _ in
                         completeAction([])
                     }
                     return
@@ -200,7 +200,7 @@ public struct AlertHelper {
                     .enumerated()
                     .map{(inputText: $1.text ?? "", placeholder: $0 < placeholders.count ? placeholders[$0] : "")}
                 
-                dispatch_async_safely_main_queue { _ in
+                DispatchQueue.safeMain { _ in
                     completeAction(textResult)
                 }
                 

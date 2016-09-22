@@ -17,26 +17,23 @@ import Foundation
  - parameter seconds:    延时时间
  - parameter completion: 执行的程序
  */
-public func delay(seconds: Double, completion:@escaping ()->()) {
+extension DispatchQueue {
     
-    let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * seconds )) / Double(NSEC_PER_SEC)
-    
-    DispatchQueue.main.asyncAfter(deadline: popTime) {
-        completion()
-    }
-}
-
-/**
- 主线程
- 
- - parameter block: <#block description#>
- */
-public func dispatch_async_safely_main_queue(_ block: @escaping ()->()) {
-    if Thread.isMainThread {
-        block()
-    } else {
-        DispatchQueue.main.async {
+    // MARK: - 安全的主线程
+    public static func safeMain(_ block: @escaping ()->()) {
+        if Thread.isMainThread {
             block()
+        } else {
+            DispatchQueue.main.async {
+                block()
+            }
+        }
+    }
+    
+    public static func delay(seconds: Double, completion:@escaping ()->()) {
+        let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * seconds )) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: popTime) {
+            completion()
         }
     }
 }
