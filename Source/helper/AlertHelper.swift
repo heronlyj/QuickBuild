@@ -29,9 +29,9 @@ public struct AlertHelper {
         message     : String,
         style       : UIAlertControllerStyle,
         actionName  : String = "确定",
-        action      : AlertAction? = nil,
-        cancelAction: AlertAction? = { () -> Void in },
-        complaction : AlertAction? = nil)
+        action      : @escaping AlertAction = { () -> Void in },
+        cancelAction: @escaping AlertAction = { () -> Void in },
+        complaction : @escaping AlertAction = { () -> Void in })
     {
         
         guard let window = UIApplication.shared.keyWindow, let vc = window.rootViewController else { return }
@@ -47,31 +47,22 @@ public struct AlertHelper {
         message          : String? = nil,
         style            : UIAlertControllerStyle,
         actionName       : String = "确定",
-        action           : AlertAction? = nil,
-        cancelAction     : AlertAction? = { () -> Void in },
-        complaction      : AlertAction? = nil)
+        action           : @escaping AlertAction = { () -> Void in },
+        cancelAction     : @escaping AlertAction = { () -> Void in },
+        complaction      : @escaping AlertAction = { () -> Void in })
     {
         
         DispatchQueue.safeMain {
-            
             let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
-            
-            let alertAction = UIAlertAction(title: actionName, style: UIAlertActionStyle.default) { _ in
-                DispatchQueue.safeMain { _ in
-                    if let action = action {
-                        action()
-                    }
-                }
+            let alertAction = UIAlertAction(title: actionName, style: .default) { _ in
+                action()
             }
-            
-            if let cancelAction = cancelAction {
-                let cancel = UIAlertAction(title: "取消", style: .cancel) { _ in
-                    cancelAction()
-                }
-                alertController.addAction(cancel)
-            }
-            
             alertController.addAction(alertAction)
+            
+            let cancel = UIAlertAction(title: "取消", style: .cancel) { _ in
+                cancelAction()
+            }
+            alertController.addAction(cancel)
             
             viewController.present(alertController, animated: true, completion: complaction)
         }
@@ -152,9 +143,7 @@ public struct AlertHelper {
                     let text = firstTextField.text
                     else { return }
                 
-                DispatchQueue.safeMain { _ in
-                    action(text)
-                }
+                action(text)
                 
             }
             alertController.addAction(cancel)
@@ -187,9 +176,7 @@ public struct AlertHelper {
             let alertAction = UIAlertAction(title: "确定", style: .default) { _ in
                 
                 guard let textFields = alertController.textFields else {
-                    DispatchQueue.safeMain { _ in
-                        completeAction([])
-                    }
+                    completeAction([])
                     return
                 }
                 
@@ -197,10 +184,7 @@ public struct AlertHelper {
                     .enumerated()
                     .map{(inputText: $1.text ?? "", placeholder: $0 < placeholders.count ? placeholders[$0] : "")}
                 
-                DispatchQueue.safeMain { _ in
-                    completeAction(textResult)
-                }
-                
+                completeAction(textResult)
             }
             
             alertController.addAction(cancel)
@@ -215,13 +199,11 @@ public struct AlertHelper {
             }
             
             viewController.present(alertController, animated: true, completion: nil)
-            
         }
         
     }
     
-    
-    public static func warning(message: String, action: (() -> Void)? = nil) {
-        showAlert(message: message, style: .alert, action: action, complaction: nil)
+    public static func warning(message: String, action: @escaping AlertAction = {() -> Void in}) {
+        showAlert(message: message, style: .alert, action: action)
     }
 }
