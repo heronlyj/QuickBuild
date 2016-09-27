@@ -8,19 +8,19 @@
 
 import UIKit
 
-protocol SelectViewDelegate: class {
+public protocol SelectViewDelegate: class {
     func didSelect(of bagSelectView: SelectView, at row: Int)
 }
 
-protocol SelectViewDataSource: class {
+public protocol SelectViewDataSource: class {
     var selectStrings: [String] { get }
     func colorConfig(of bagSelectView: SelectView, at row: Int) -> (backgroundColor: UIColor, textColor: UIColor)
 }
 
 
-class SelectView: NSObject {
+public class SelectView: NSObject {
     
-    enum Position {
+    public enum Position {
         
         case navLeft(width: CGFloat)
         case navMiddle(width: CGFloat)
@@ -46,17 +46,25 @@ class SelectView: NSObject {
     
     var contentTableView: UITableView!
     
-    var cellHeight: CGFloat = 50
-    var startAlpha: CGFloat = 0.9
-    var startFrame: CGRect = CGRect.zero
+    public var cornerRadius: CGFloat = 0 {
+        didSet {
+            self.contentTableView.layer.cornerRadius = cornerRadius
+        }
+    }
     
-    weak var delegate: SelectViewDelegate? {
+    public var isShow: Bool = false
+    
+    public var cellHeight: CGFloat = 50
+    public var startAlpha: CGFloat = 0.9
+    public var startFrame: CGRect = CGRect.zero
+    
+    public weak var delegate: SelectViewDelegate? {
         didSet {
             contentTableView.reloadData()
         }
     }
     
-    weak var dataSource: SelectViewDataSource? {
+    public weak var dataSource: SelectViewDataSource? {
         didSet {
             contentTableView.reloadData()
         }
@@ -64,7 +72,7 @@ class SelectView: NSObject {
     
     private override init() {}
     
-    convenience init(inView: UIView, position: Position) {
+    public convenience init(inView: UIView, position: Position) {
         self.init()
         
         startFrame = position.startFrame
@@ -81,11 +89,11 @@ class SelectView: NSObject {
         inView.addSubview(contentTableView)
     }
     
-    func refreshDataSource() {
+    public func refreshDataSource() {
         contentTableView.reloadData()
     }
     
-    func show() {
+    public func show() {
         
         guard let count = dataSource?.selectStrings.count else { return }
         
@@ -97,18 +105,29 @@ class SelectView: NSObject {
         
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: .curveEaseInOut, animations: { 
             self.contentTableView.frame.size.height = showHeight
-            }, completion: nil)
+            }, completion: { _ in
+            self.isShow = true
+        })
     }
     
-    func hidden() {
+    public func hidden() {
         
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, options: .curveEaseInOut, animations: {
             self.contentTableView.frame.size.height = 0
             self.contentTableView.alpha = 0
         }){ (finish) in
             self.contentTableView.isHidden = true
+            self.isShow = false
         }
         
+    }
+    
+    public func changeStatus() {
+        if isShow {
+            hidden()
+        } else {
+            show()
+        }
     }
     
 }
@@ -116,12 +135,12 @@ class SelectView: NSObject {
 
 extension SelectView: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let dataSource = dataSource else { return 0 }
         return dataSource.selectStrings.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SelectViewCell", for: indexPath)
         
         if let dataSource = dataSource {
@@ -144,11 +163,11 @@ extension SelectView: UITableViewDataSource {
 
 extension SelectView: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
