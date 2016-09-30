@@ -29,7 +29,7 @@ public class PageView: UIView {
     
     public var titleScrollViewHeight: CGFloat = 53
     
-    public var titleButtonWidth: CGFloat?
+    public var titleButtonWidth: CGFloat = 60
     
     var selectedButton: UIButton?
     
@@ -63,8 +63,6 @@ public class PageView: UIView {
     public func initBaseView() {
         
         self.translatesAutoresizingMaskIntoConstraints = false
-        
-        let titleButtonWidth: CGFloat = self.titleButtonWidth == nil ? titles.count < 6 ? frame.width/CGFloat(titles.count) : 60 : self.titleButtonWidth!
         
         flagView = {
             let view = UIView(frame: CGRect(x: 0, y: titleScrollViewHeight - 3, width: titleButtonWidth, height: 3))
@@ -112,6 +110,12 @@ public class PageView: UIView {
         
         if titleIsShow {
             addSubview(titleScrollView)
+            addSubview({
+                let view = UIView()
+                view.frame = CGRect(x: 0, y: titleScrollView.frame.maxY - 0.5, width: self.frame.width, height: 0.5)
+                view.backgroundColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1)
+                return view
+                }())
         }
         
         if titleIsShow && flagViewIsShow {
@@ -149,6 +153,12 @@ public class PageView: UIView {
     
     
     @objc private func titleButtonTap(btn: UIButton) {
+        contentScrollView.setContentOffset(CGPoint(x: self.frame.width * CGFloat(btn.tag - 100), y: 0), animated: true)
+        changeButtonStats(btn: btn)
+    }
+    
+    // 改变 btn 的样式
+    func changeButtonStats(btn: UIButton) {
         
         if selectedButton != nil {
             selectedButton?.isSelected = false
@@ -158,26 +168,28 @@ public class PageView: UIView {
         btn.isSelected = true
         btn.backgroundColor = titleSelectedBackgroundColor
         selectedButton = btn
-        
-        let index = btn.tag - 100
-        contentScrollView.setContentOffset(CGPoint(x: self.frame.width * CGFloat(index), y: 0), animated: true)
     }
+    
 }
 
 extension PageView: UIScrollViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        printLogDebug(titleScrollView.subviews)
+        if scrollView === contentScrollView {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.flagView.frame.origin.x = scrollView.contentOffset.x * (self.titleScrollView.contentSize.width / self.contentScrollView.contentSize.width)
+            })
+        }
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if scrollView === contentScrollView {
-            let index = scrollView.contentOffset.x / scrollView.frame.width
-            delegate?.pageView(view: self, scrollAt: Int(index))
+            let index = Int(scrollView.contentOffset.x / scrollView.frame.width)
+            delegate?.pageView(view: self, scrollAt: index)
             
-            UIView.animate(withDuration: 0.2, animations: {
-                self.flagView.frame.origin.x = self.titleScrollView.contentOffset.x * index
-            })
+            if let button = titleScrollView.viewWithTag(100 + index) as? UIButton {
+                changeButtonStats(btn: button)
+            }
         }
     }
     

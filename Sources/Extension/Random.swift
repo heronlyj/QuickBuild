@@ -16,7 +16,7 @@ public protocol RandomAble {
     func randomInRange(_ range: Range<Int>) -> Int
 }
 
-public extension RandomAble {
+extension RandomAble {
     public func randomInRange(_ range: Range<Int>) -> Int {
         let count = UInt32(range.upperBound - range.lowerBound)
         return  Int(arc4random_uniform(count)) + range.lowerBound

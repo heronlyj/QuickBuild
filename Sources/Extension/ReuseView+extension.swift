@@ -6,9 +6,6 @@
 //  Copyright © 2016 heronlyj. All rights reserved.
 //
 
-import Foundation
-
-
 import UIKit
 
 // UITableViewCell 或者 UICollectionCell 的 ID
@@ -17,7 +14,6 @@ public protocol ReuseView {
 }
 
 extension ReuseView {
-    
     /// 这里必须是静态方法才可以
     public static var reuseId: String {
         return String(describing: self)
@@ -43,9 +39,9 @@ extension UITableView {
         return dequeueReusableHeaderFooterView(withIdentifier: type.reuseId) as? T
     }
     
-    //    func dequeueReusableCellWithCellType<T: UITableViewCell>(cellType: T.Type) -> T? {
-    //        return dequeueReusableCellWithIdentifier(String(cellType)) as? T
-    //    }
+//    func dequeueReusableCellWithCellType<T: UITableViewCell>(cellType: T.Type) -> T? {
+//        return dequeueReusableCellWithIdentifier(String(cellType)) as? T
+//    }
 }
 
 extension UICollectionView {
@@ -102,7 +98,4 @@ public extension RegisterFromNib where Self: UICollectionView {
     }
     
 }
-
-extension UITableView: RegisterFromNib {}
-extension UICollectionView: RegisterFromNib {}
 

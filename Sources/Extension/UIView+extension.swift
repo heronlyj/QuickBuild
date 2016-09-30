@@ -6,7 +6,7 @@
 //  Copyright © 2016 heronlyj. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 extension UIView {
