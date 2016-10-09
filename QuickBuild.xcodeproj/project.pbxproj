@@ -31,6 +31,7 @@
 		2C73101A1D9E098A009D58BA /* SortAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310041D9E098A009D58BA /* SortAble.swift */; };
 		2C73101B1D9E098A009D58BA /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310061D9E098A009D58BA /* PageView.swift */; };
 		2C73101C1D9E098A009D58BA /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310071D9E098A009D58BA /* SelectView.swift */; };
+		2CAE94431DAA4A3000D17C12 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE94421DAA4A3000D17C12 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		2C7310041D9E098A009D58BA /* SortAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortAble.swift; sourceTree = "<group>"; };
 		2C7310061D9E098A009D58BA /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		2C7310071D9E098A009D58BA /* SelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
+		2CAE94421DAA4A3000D17C12 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				2C730FFE1D9E098A009D58BA /* NotificationManager.swift */,
 				2C730FFF1D9E098A009D58BA /* SwiftyJSON.swift */,
 				2C7310001D9E098A009D58BA /* Timer.swift */,
+				2CAE94421DAA4A3000D17C12 /* JSON.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C7310191D9E098A009D58BA /* RotateAble.swift in Sources */,
+				2CAE94431DAA4A3000D17C12 /* JSON.swift in Sources */,
 				2C7310081D9E098A009D58BA /* Array+extension.swift in Sources */,
 				2C73101C1D9E098A009D58BA /* SelectView.swift in Sources */,
 				2C73100C1D9E098A009D58BA /* String+extension.swift in Sources */,
