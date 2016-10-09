@@ -31,17 +31,14 @@ extension UITableView {
         return dequeueReusableCell(withIdentifier: type.reuseId) as? T
     }
     
-    public func dequeueReuseableCell<T: ReuseView>(withType type: T.Type, indexPath: IndexPath) -> T? {
+    public func dequeueReusableCell<T: ReuseView>(withType type: T.Type, for indexPath: IndexPath) -> T? {
         return dequeueReusableCell(withIdentifier: type.reuseId, for: indexPath) as? T
     }
     
     public func dequeueReusableHeaderFooterView<T: ReuseView>(withType type: T.Type) -> T? {
         return dequeueReusableHeaderFooterView(withIdentifier: type.reuseId) as? T
     }
-    
-//    func dequeueReusableCellWithCellType<T: UITableViewCell>(cellType: T.Type) -> T? {
-//        return dequeueReusableCellWithIdentifier(String(cellType)) as? T
-//    }
+
 }
 
 extension UICollectionView {

@@ -11,7 +11,6 @@ import UIKit
 public typealias Screen = UIScreen
 
 extension Screen {
-    
     public static var size: CGSize { return UIScreen.main.bounds.size }
     public static var width: CGFloat { return size.width }
     public static var height: CGFloat { return size.height }
