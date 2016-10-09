@@ -110,13 +110,10 @@ public struct AlertHelper {
             for actionItem in actions {
                 
                 let alertAction = UIAlertAction(title: actionItem.name, style: UIAlertActionStyle.default) { _ in
-                    DispatchQueue.safeMain{
-                        actionItem.action()
-                    }
+                    actionItem.action()
                 }
                 
                 alertController.addAction(alertAction)
-                
             }
             let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
             alertController.addAction(cancel)
