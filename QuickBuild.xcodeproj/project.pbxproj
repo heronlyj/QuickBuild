@@ -7,10 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C3B13851D9226E90030BFDC /* QuickBuild.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3B137B1D9226E90030BFDC /* QuickBuild.framework */; };
 		2C3B138A1D9226E90030BFDC /* QuickBuildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3B13891D9226E90030BFDC /* QuickBuildTests.swift */; };
+		2C3B138C1D9226E90030BFDC /* QuickBuild.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3B137E1D9226E90030BFDC /* QuickBuild.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C7310081D9E098A009D58BA /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FF01D9E098A009D58BA /* Array+extension.swift */; };
+		2C7310091D9E098A009D58BA /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FF11D9E098A009D58BA /* Int+extension.swift */; };
+		2C73100A1D9E098A009D58BA /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FF21D9E098A009D58BA /* Random.swift */; };
+		2C73100B1D9E098A009D58BA /* ReuseView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FF31D9E098A009D58BA /* ReuseView+extension.swift */; };
+		2C73100C1D9E098A009D58BA /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FF41D9E098A009D58BA /* String+extension.swift */; };
+		2C73100D1D9E098A009D58BA /* UINavigationController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FF51D9E098A009D58BA /* UINavigationController+extension.swift */; };
+		2C73100E1D9E098A009D58BA /* UIScreen+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FF61D9E098A009D58BA /* UIScreen+extension.swift */; };
+		2C73100F1D9E098A009D58BA /* UIStoryboard+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FF71D9E098A009D58BA /* UIStoryboard+extension.swift */; };
+		2C7310101D9E098A009D58BA /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FF81D9E098A009D58BA /* UIView+extension.swift */; };
+		2C7310111D9E098A009D58BA /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FFA1D9E098A009D58BA /* AlertHelper.swift */; };
+		2C7310121D9E098A009D58BA /* Docker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FFB1D9E098A009D58BA /* Docker.swift */; };
+		2C7310131D9E098A009D58BA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FFC1D9E098A009D58BA /* Helper.swift */; };
+		2C7310141D9E098A009D58BA /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FFD1D9E098A009D58BA /* Listener.swift */; };
+		2C7310151D9E098A009D58BA /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FFE1D9E098A009D58BA /* NotificationManager.swift */; };
+		2C7310161D9E098A009D58BA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FFF1D9E098A009D58BA /* SwiftyJSON.swift */; };
+		2C7310171D9E098A009D58BA /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310001D9E098A009D58BA /* Timer.swift */; };
+		2C7310181D9E098A009D58BA /* InitAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310021D9E098A009D58BA /* InitAble.swift */; };
+		2C7310191D9E098A009D58BA /* RotateAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310031D9E098A009D58BA /* RotateAble.swift */; };
+		2C73101A1D9E098A009D58BA /* SortAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310041D9E098A009D58BA /* SortAble.swift */; };
+		2C73101B1D9E098A009D58BA /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310061D9E098A009D58BA /* PageView.swift */; };
+		2C73101C1D9E098A009D58BA /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310071D9E098A009D58BA /* SelectView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2C3B13861D9226E90030BFDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C3B13721D9226E90030BFDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C3B137A1D9226E90030BFDC;
+			remoteInfo = QuickBuild;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2C3B137B1D9226E90030BFDC /* QuickBuild.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickBuild.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3B137E1D9226E90030BFDC /* QuickBuild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickBuild.h; sourceTree = "<group>"; };
 		2C3B137F1D9226E90030BFDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C3B13841D9226E90030BFDC /* QuickBuildTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickBuildTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,10 +74,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2C3B13771D9226E90030BFDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C3B13811D9226E90030BFDC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3B13851D9226E90030BFDC /* QuickBuild.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +105,7 @@
 		2C3B137C1D9226E90030BFDC /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				2C3B137B1D9226E90030BFDC /* QuickBuild.framework */,
 				2C3B13841D9226E90030BFDC /* QuickBuildTests.xctest */,
 			);
 			name = Products;
@@ -148,7 +191,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		2C3B13781D9226E90030BFDC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C3B138C1D9226E90030BFDC /* QuickBuild.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		2C3B137A1D9226E90030BFDC /* QuickBuild */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C3B138F1D9226E90030BFDC /* Build configuration list for PBXNativeTarget "QuickBuild" */;
+			buildPhases = (
+				2C3B13761D9226E90030BFDC /* Sources */,
+				2C3B13771D9226E90030BFDC /* Frameworks */,
+				2C3B13781D9226E90030BFDC /* Headers */,
+				2C3B13791D9226E90030BFDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickBuild;
+			productName = QuickBuild;
+			productReference = 2C3B137B1D9226E90030BFDC /* QuickBuild.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		2C3B13831D9226E90030BFDC /* QuickBuildTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C3B13921D9226E90030BFDC /* Build configuration list for PBXNativeTarget "QuickBuildTests" */;
@@ -160,6 +232,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2C3B13871D9226E90030BFDC /* PBXTargetDependency */,
 			);
 			name = QuickBuildTests;
 			productName = QuickBuildTests;
@@ -176,6 +249,11 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = heronlyj;
 				TargetAttributes = {
+					2C3B137A1D9226E90030BFDC = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
 					2C3B13831D9226E90030BFDC = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 3ZH3G7NDJZ;
@@ -195,12 +273,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				2C3B137A1D9226E90030BFDC /* QuickBuild */,
 				2C3B13831D9226E90030BFDC /* QuickBuildTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2C3B13791D9226E90030BFDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C3B13821D9226E90030BFDC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,6 +297,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2C3B13761D9226E90030BFDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C7310191D9E098A009D58BA /* RotateAble.swift in Sources */,
+				2C7310081D9E098A009D58BA /* Array+extension.swift in Sources */,
+				2C73101C1D9E098A009D58BA /* SelectView.swift in Sources */,
+				2C73100C1D9E098A009D58BA /* String+extension.swift in Sources */,
+				2C7310141D9E098A009D58BA /* Listener.swift in Sources */,
+				2C7310161D9E098A009D58BA /* SwiftyJSON.swift in Sources */,
+				2C73101B1D9E098A009D58BA /* PageView.swift in Sources */,
+				2C7310091D9E098A009D58BA /* Int+extension.swift in Sources */,
+				2C7310151D9E098A009D58BA /* NotificationManager.swift in Sources */,
+				2C73101A1D9E098A009D58BA /* SortAble.swift in Sources */,
+				2C7310101D9E098A009D58BA /* UIView+extension.swift in Sources */,
+				2C7310171D9E098A009D58BA /* Timer.swift in Sources */,
+				2C73100D1D9E098A009D58BA /* UINavigationController+extension.swift in Sources */,
+				2C73100A1D9E098A009D58BA /* Random.swift in Sources */,
+				2C73100B1D9E098A009D58BA /* ReuseView+extension.swift in Sources */,
+				2C73100F1D9E098A009D58BA /* UIStoryboard+extension.swift in Sources */,
+				2C7310111D9E098A009D58BA /* AlertHelper.swift in Sources */,
+				2C7310121D9E098A009D58BA /* Docker.swift in Sources */,
+				2C7310181D9E098A009D58BA /* InitAble.swift in Sources */,
+				2C73100E1D9E098A009D58BA /* UIScreen+extension.swift in Sources */,
+				2C7310131D9E098A009D58BA /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C3B13801D9226E90030BFDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,6 +334,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C3B13871D9226E90030BFDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C3B137A1D9226E90030BFDC /* QuickBuild */;
+			targetProxy = 2C3B13861D9226E90030BFDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2C3B138D1D9226E90030BFDC /* Debug */ = {
@@ -323,6 +445,53 @@
 			};
 			name = Release;
 		};
+		2C3B13901D9226E90030BFDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = QuickBuild/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.heronlyj.QuickBuild;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2C3B13911D9226E90030BFDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = QuickBuild/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DRELEASE";
+				PRODUCT_BUNDLE_IDENTIFIER = com.heronlyj.QuickBuild;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		2C3B13931D9226E90030BFDC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -357,6 +526,15 @@
 			buildConfigurations = (
 				2C3B138D1D9226E90030BFDC /* Debug */,
 				2C3B138E1D9226E90030BFDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C3B138F1D9226E90030BFDC /* Build configuration list for PBXNativeTarget "QuickBuild" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C3B13901D9226E90030BFDC /* Debug */,
+				2C3B13911D9226E90030BFDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
