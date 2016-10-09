@@ -8,6 +8,9 @@
 
 import Foundation
 
+//let OnePixelLineColor = UIColor(hexString: "#BFC0C0")
+
+
 /**
  延时提交block 进入主队列执行
  
@@ -18,15 +21,20 @@ extension DispatchQueue {
     
     // MARK: - 安全的主线程
     public static func safeMain(_ block: @escaping ()->()) {
-        if Thread.isMainThread { block() }
-        else { DispatchQueue.main.async(execute: block) }
+        if Thread.isMainThread {
+            block()
+        } else {
+            DispatchQueue.main.async {
+                block()
+            }
+        }
     }
     
-    public static func delay(seconds: TimeInterval, completion: @escaping ()->()) {
-        let after = DispatchTime.now() + seconds
-        DispatchQueue.main.asyncAfter(deadline: after, execute: completion)
-        
-        
+    public static func delay(seconds: Double, completion:@escaping ()->()) {
+        let popTime = DispatchTime.now() + Double(Int64( Double(NSEC_PER_SEC) * seconds )) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: popTime) {
+            completion()
+        }
     }
 }
 
