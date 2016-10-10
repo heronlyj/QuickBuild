@@ -60,7 +60,12 @@ public class ImageLoopView: UIView {
     public var collectionView: UICollectionView!
     fileprivate var flowLayout: UICollectionViewFlowLayout!
     
-    public weak var delegate: ImageLoopViewDelegate?
+    public weak var delegate: ImageLoopViewDelegate? {
+        didSet {
+            setUpTimer()
+            collectionView.reloadData()
+        }
+    }
     
     fileprivate var timer: Timer?
     fileprivate let multipleNumber = 10000
@@ -96,10 +101,10 @@ public class ImageLoopView: UIView {
     func setup() {
         
         flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumLineSpacing = CGFloat.leastNonzeroMagnitude
-        flowLayout.minimumInteritemSpacing = CGFloat.leastNonzeroMagnitude
+        flowLayout.sectionInset = .zero
         flowLayout.scrollDirection = .horizontal
-        flowLayout.sectionInset = UIEdgeInsets.zero
+        flowLayout.minimumLineSpacing = .leastNonzeroMagnitude
+        flowLayout.minimumInteritemSpacing = .leastNonzeroMagnitude
         
         collectionView = UICollectionView(frame: bounds, collectionViewLayout: flowLayout)
         
@@ -110,22 +115,29 @@ public class ImageLoopView: UIView {
         collectionView.backgroundColor = UIColor.clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
+        
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
         
         addSubview(collectionView)
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addConstraint(NSLayoutConstraint(item: collectionView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: collectionView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: collectionView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: collectionView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0))
+        
         scrollCollectionView()
         setUpTimer()
         
-        NotificationCenter.default.addObserver(
-            forName: .UIDeviceOrientationDidChange,
-            object: nil,
-            queue: OperationQueue.main)
-        { [weak self] (_) in
+        NotificationCenter.default.addObserver(forName: .UIDeviceOrientationDidChange, object: nil, queue: .main) { [weak self] (_) in
             self?.collectionView.reloadData()
         }
     }
+    
+    
     
 }
 
@@ -183,25 +195,28 @@ extension ImageLoopView {
         // 定制停留时间
         var stopTime = scrollTimeInterval
         
-        if let item = collectionView.indexPathsForVisibleItems.first?.item {
-            let currentIndex = getCurrentIndex(indexPath: IndexPath(item: item, section: 0))
+        if let index = collectionView.indexPathsForVisibleItems.first {
+            let currentIndex = getCurrentIndex(indexPath: index)
             stopTime = delegate?.stopTimeInteval(at: currentIndex) ?? scrollTimeInterval
         }
         
         if totalCount > 1 && autoLoop {
             
             timer = Timer.after(stopTime, { [weak self] in
-                guard let strongSelf = self else { return }
                 
-                let currentIndex = Int(strongSelf.collectionView.contentOffset.x / strongSelf.flowLayout.itemSize.width)
+                guard
+                    let strongSelf = self,
+                    let currentIndex = strongSelf.collectionView.indexPathsForVisibleItems.first?.item
+                    else { return }
+
                 var targetIndex = currentIndex + 1
                 
                 if targetIndex % 100 == 0 {
                     targetIndex = strongSelf.totalCount / 2
-                    strongSelf.collectionView.scrollToItem(at: IndexPath(item: targetIndex - 1, section: 0), at: [], animated: false)
+                    strongSelf.collectionView.scrollToItem(at: IndexPath(item: targetIndex - 1, section: 0), at: .centeredHorizontally, animated: false)
                 }
                 
-                strongSelf.collectionView.scrollToItem(at: IndexPath(item: targetIndex, section: 0), at: [], animated: true)
+                strongSelf.collectionView.scrollToItem(at: IndexPath(item: targetIndex, section: 0), at: .centeredHorizontally, animated: true)
                 strongSelf.setUpTimer()
             })
         }
