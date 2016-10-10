@@ -50,13 +50,6 @@ extension UICollectionView {
 }
 
 
-/// 便于从 nib 文件初始化的扩展
-//public protocol RegisterFromNib {
-//    func register(withNibAndIdName nibAndIdName: String, in bundle: Bundle)
-//    func register(withNibName nibName: String, id identifier: String, in bundle: Bundle)
-//}
-
-//public extension RegisterFromNib where Self: UITableView {
 public extension UITableView {
     
     public func register(withNibName nibName: String, id identifier: String, in bundle: Bundle = Bundle.main) {
@@ -73,7 +66,6 @@ public enum CollectionSupplementaryViewKind {
     case header, footer
 }
 
-//public extension RegisterFromNib where Self: UICollectionView {
 public extension UICollectionView {
 
     public func register(withNibName nibName: String, id identifier: String, in bundle: Bundle = Bundle.main) {

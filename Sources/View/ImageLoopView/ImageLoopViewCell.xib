@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageLoopViewCell" id="4VA-7a-dVo" customClass="ImageLoopViewCell" customModule="QuickBuild" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="263" height="133"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="263" height="133"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NDt-fQ-VHa"/>
+                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntU-kq-rVa">
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="mRp-S2-YaO"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="By5-2R-ZrQ">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="pHG-Qj-9LT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ntU-kq-rVa" secondAttribute="trailing" id="3fQ-LZ-n2K"/>
+                <constraint firstItem="ntU-kq-rVa" firstAttribute="leading" secondItem="4VA-7a-dVo" secondAttribute="leading" id="4Mm-XN-sOn"/>
+                <constraint firstItem="NDt-fQ-VHa" firstAttribute="leading" secondItem="4VA-7a-dVo" secondAttribute="leading" id="4nN-bI-BUR"/>
+                <constraint firstAttribute="bottom" secondItem="ntU-kq-rVa" secondAttribute="bottom" id="DAC-qh-FZ4"/>
+                <constraint firstAttribute="bottom" secondItem="By5-2R-ZrQ" secondAttribute="bottom" id="dxZ-np-a7i"/>
+                <constraint firstAttribute="trailing" secondItem="By5-2R-ZrQ" secondAttribute="trailing" constant="5" id="kzr-Wb-X8Y"/>
+                <constraint firstItem="By5-2R-ZrQ" firstAttribute="leading" secondItem="4VA-7a-dVo" secondAttribute="leading" constant="5" id="lip-SF-UFA"/>
+                <constraint firstAttribute="bottom" secondItem="NDt-fQ-VHa" secondAttribute="bottom" id="vLu-2z-g7Q"/>
+                <constraint firstAttribute="trailing" secondItem="NDt-fQ-VHa" secondAttribute="trailing" id="xt5-wp-Sk7"/>
+                <constraint firstItem="NDt-fQ-VHa" firstAttribute="top" secondItem="4VA-7a-dVo" secondAttribute="top" id="yT1-8z-pmH"/>
+            </constraints>
+            <size key="customSize" width="263" height="133"/>
+            <connections>
+                <outlet property="imageView" destination="NDt-fQ-VHa" id="aCn-xB-tqg"/>
+                <outlet property="titleBackgroundView" destination="ntU-kq-rVa" id="Ppx-q8-3hX"/>
+                <outlet property="titleLabel" destination="By5-2R-ZrQ" id="ef9-ty-1dL"/>
+            </connections>
+            <point key="canvasLocation" x="-102.5" y="78.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
