@@ -52,14 +52,18 @@ extension UICollectionView {
 
 public extension UITableView {
     
-    public func register(withNibName nibName: String, id identifier: String, in bundle: Bundle = Bundle.main) {
+    public func register(name nibName: String, id identifier: String, in bundle: Bundle = Bundle.main) {
         register(UINib(nibName: nibName, bundle: bundle), forCellReuseIdentifier: identifier)
     }
     
-    public  func register(withNibAndIdName nibAndIdName: String, in bundle: Bundle = Bundle.main) {
+    public func register(name nibAndIdName: String, in bundle: Bundle = Bundle.main) {
         register(UINib(nibName: nibAndIdName, bundle: bundle), forCellReuseIdentifier: nibAndIdName)
     }
     
+    public func registerHeaderFooterView(name nibAndIdName: String, in bundle: Bundle = Bundle.main) {
+        register(UINib(nibName: nibAndIdName, bundle: bundle), forHeaderFooterViewReuseIdentifier: nibAndIdName)
+    }
+
 }
 
 public enum CollectionSupplementaryViewKind {
@@ -68,15 +72,15 @@ public enum CollectionSupplementaryViewKind {
 
 public extension UICollectionView {
 
-    public func register(withNibName nibName: String, id identifier: String, in bundle: Bundle = Bundle.main) {
+    public func register(name nibName: String, id identifier: String, in bundle: Bundle = Bundle.main) {
         register(UINib(nibName: nibName, bundle: bundle), forCellWithReuseIdentifier: identifier)
     }
     
-    public func register(withNibAndIdName nibAndIdName: String, in bundle: Bundle = Bundle.main) {
+    public func register(name nibAndIdName: String, in bundle: Bundle = Bundle.main) {
         register(UINib(nibName: nibAndIdName, bundle: bundle), forCellWithReuseIdentifier: nibAndIdName)
     }
     
-    public func register(withNibName nibName: String, id identifier: String, in bundle: Bundle = Bundle.main, for supplementaryViewOfKind: CollectionSupplementaryViewKind) {
+    public func register(name nibName: String, id identifier: String, in bundle: Bundle = Bundle.main, for supplementaryViewOfKind: CollectionSupplementaryViewKind) {
         let nib = UINib(nibName: nibName, bundle: bundle)
         
         switch supplementaryViewOfKind {

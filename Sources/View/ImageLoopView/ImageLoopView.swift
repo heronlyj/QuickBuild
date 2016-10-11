@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NotificationCenter
 
 class ImageLoopViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
@@ -122,8 +121,8 @@ public class ImageLoopView: UIView {
         
         addSubview(collectionView)
         
+        // 自动布局
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
         addConstraint(NSLayoutConstraint(item: collectionView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: collectionView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: collectionView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0))
@@ -132,6 +131,7 @@ public class ImageLoopView: UIView {
         scrollCollectionView()
         setUpTimer()
         
+        // 旋转屏幕之后 cell 的大小改变因此需要 reload
         NotificationCenter.default.addObserver(forName: .UIDeviceOrientationDidChange, object: nil, queue: .main) { [weak self] (_) in
             self?.collectionView.reloadData()
         }

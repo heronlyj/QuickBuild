@@ -10,9 +10,18 @@ import UIKit
 
 
 extension UIStoryboard {
+    public struct Name {
+        public var rawValue: String
+        public init(_ rawValue: String) {
+            self.rawValue = rawValue
+        }
+    }
+}
+
+extension UIStoryboard {
     
-    public convenience init(name: String) {
-        self.init(name: name, bundle: Bundle.main)
+    public convenience init(name: UIStoryboard.Name, bundle: Bundle = .main) {
+        self.init(name: name.rawValue, bundle: bundle)
     }
     
     public func instantiate(id identifier: String) -> UIViewController {
