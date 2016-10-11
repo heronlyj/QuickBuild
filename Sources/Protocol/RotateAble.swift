@@ -11,13 +11,13 @@ import UIKit
 /**
  *  单个页面是否支持旋转
  */
-public protocol RotateAble {
+public protocol Rotateable {
     var autoRotateAble: Bool { get }
     var supportedOrientations: UIInterfaceOrientationMask { get }
     var preferredOrientationForPresentation: UIInterfaceOrientation { get }
 }
 
-public extension RotateAble {
+public extension Rotateable {
     public var autoRotateAble: Bool { return false }
     public var supportedOrientations: UIInterfaceOrientationMask { return .portrait }
     public var preferredOrientationForPresentation: UIInterfaceOrientation { return .portrait }

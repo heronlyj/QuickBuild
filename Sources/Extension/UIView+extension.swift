@@ -13,8 +13,7 @@ extension UIView {
     // 截取视图的内容为 一张图片
     public func screenShot() -> UIImage? {
         guard let currentContext = UIGraphicsGetCurrentContext() else { return nil }
-        let size = CGSize(width: bounds.width, height: bounds.height)
-        UIGraphicsBeginImageContextWithOptions(size, true, 0)
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0)
         self.layer.render(in: currentContext)
         let viewImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

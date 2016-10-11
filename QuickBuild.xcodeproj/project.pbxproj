@@ -31,6 +31,8 @@
 		2C73101A1D9E098A009D58BA /* SortAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310041D9E098A009D58BA /* SortAble.swift */; };
 		2C73101B1D9E098A009D58BA /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310061D9E098A009D58BA /* PageView.swift */; };
 		2C73101C1D9E098A009D58BA /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310071D9E098A009D58BA /* SelectView.swift */; };
+		2C81D9271DACD735007369FD /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C81D9261DACD735007369FD /* UIImage+extension.swift */; };
+		2C81D92B1DACE351007369FD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C81D92A1DACE351007369FD /* Button.swift */; };
 		2CAE94431DAA4A3000D17C12 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE94421DAA4A3000D17C12 /* JSON.swift */; };
 		2CED06301DAB98760070BA64 /* ImageLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED062F1DAB98760070BA64 /* ImageLoopView.swift */; };
 		2CED06321DAB98810070BA64 /* ImageLoopViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CED06311DAB98810070BA64 /* ImageLoopViewCell.xib */; };
@@ -75,6 +77,8 @@
 		2C7310041D9E098A009D58BA /* SortAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortAble.swift; sourceTree = "<group>"; };
 		2C7310061D9E098A009D58BA /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		2C7310071D9E098A009D58BA /* SelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
+		2C81D9261DACD735007369FD /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
+		2C81D92A1DACE351007369FD /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		2CAE94421DAA4A3000D17C12 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		2CED062F1DAB98760070BA64 /* ImageLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoopView.swift; sourceTree = "<group>"; };
 		2CED06311DAB98810070BA64 /* ImageLoopViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageLoopViewCell.xib; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				2C730FF61D9E098A009D58BA /* UIScreen+extension.swift */,
 				2C730FF71D9E098A009D58BA /* UIStoryboard+extension.swift */,
 				2C730FF81D9E098A009D58BA /* UIView+extension.swift */,
+				2C81D9261DACD735007369FD /* UIImage+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				2C7310061D9E098A009D58BA /* PageView.swift */,
 				2C7310071D9E098A009D58BA /* SelectView.swift */,
 				2CED06331DAB99E30070BA64 /* GradientView.swift */,
+				2C81D92A1DACE351007369FD /* Button.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 				2C73101B1D9E098A009D58BA /* PageView.swift in Sources */,
 				2C7310091D9E098A009D58BA /* Int+extension.swift in Sources */,
 				2C7310151D9E098A009D58BA /* NotificationManager.swift in Sources */,
+				2C81D92B1DACE351007369FD /* Button.swift in Sources */,
 				2C73101A1D9E098A009D58BA /* SortAble.swift in Sources */,
 				2C7310101D9E098A009D58BA /* UIView+extension.swift in Sources */,
 				2C7310171D9E098A009D58BA /* Timer.swift in Sources */,
@@ -342,6 +349,7 @@
 				2C73100B1D9E098A009D58BA /* ReuseView+extension.swift in Sources */,
 				2C73100F1D9E098A009D58BA /* UIStoryboard+extension.swift in Sources */,
 				2C7310111D9E098A009D58BA /* AlertHelper.swift in Sources */,
+				2C81D9271DACD735007369FD /* UIImage+extension.swift in Sources */,
 				2C7310121D9E098A009D58BA /* Docker.swift in Sources */,
 				2C7310181D9E098A009D58BA /* InitAble.swift in Sources */,
 				2C73100E1D9E098A009D58BA /* UIScreen+extension.swift in Sources */,
