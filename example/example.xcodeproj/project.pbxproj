@@ -16,6 +16,8 @@
 		2C81D9591DACEE04007369FD /* exampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C81D9581DACEE04007369FD /* exampleUITests.swift */; };
 		2C81D9671DACEE5F007369FD /* QuickBuild.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C81D9661DACEE5F007369FD /* QuickBuild.framework */; };
 		2C81D9681DACEE5F007369FD /* QuickBuild.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C81D9661DACEE5F007369FD /* QuickBuild.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C81D9711DACFC10007369FD /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C81D9701DACFC10007369FD /* CustomView.swift */; };
+		2C81D9731DACFC16007369FD /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C81D9721DACFC16007369FD /* CustomView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		2C81D9581DACEE04007369FD /* exampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exampleUITests.swift; sourceTree = "<group>"; };
 		2C81D95A1DACEE04007369FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C81D9661DACEE5F007369FD /* QuickBuild.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QuickBuild.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C81D9701DACFC10007369FD /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		2C81D9721DACFC16007369FD /* CustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				2C81D93F1DACEE04007369FD /* Assets.xcassets */,
 				2C81D9411DACEE04007369FD /* LaunchScreen.storyboard */,
 				2C81D9441DACEE04007369FD /* Info.plist */,
+				2C81D9701DACFC10007369FD /* CustomView.swift */,
+				2C81D9721DACFC16007369FD /* CustomView.xib */,
 			);
 			path = example;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C81D9431DACEE04007369FD /* LaunchScreen.storyboard in Resources */,
+				2C81D9731DACFC16007369FD /* CustomView.xib in Resources */,
 				2C81D9401DACEE04007369FD /* Assets.xcassets in Resources */,
 				2C81D93E1DACEE04007369FD /* Main.storyboard in Resources */,
 			);
@@ -290,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C81D9711DACFC10007369FD /* CustomView.swift in Sources */,
 				2C81D93B1DACEE04007369FD /* ViewController.swift in Sources */,
 				2C81D9391DACEE04007369FD /* AppDelegate.swift in Sources */,
 			);

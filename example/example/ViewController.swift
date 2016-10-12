@@ -28,9 +28,7 @@ class ViewController: UIViewController {
         btn.layer.borderWidth = 2
         btn.layer.borderColor = UIColor.green.cgColor
         
-        view.addSubview(btn)
-        
-        
+//        view.addSubview(btn)
     }
 
     override func didReceiveMemoryWarning() {

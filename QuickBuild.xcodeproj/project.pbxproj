@@ -33,6 +33,7 @@
 		2C73101C1D9E098A009D58BA /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310071D9E098A009D58BA /* SelectView.swift */; };
 		2C81D9271DACD735007369FD /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C81D9261DACD735007369FD /* UIImage+extension.swift */; };
 		2C81D92B1DACE351007369FD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C81D92A1DACE351007369FD /* Button.swift */; };
+		2C9BF78E1DAE2895000F753A /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9BF78D1DAE2895000F753A /* Layout.swift */; };
 		2CAE94431DAA4A3000D17C12 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE94421DAA4A3000D17C12 /* JSON.swift */; };
 		2CED06301DAB98760070BA64 /* ImageLoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CED062F1DAB98760070BA64 /* ImageLoopView.swift */; };
 		2CED06321DAB98810070BA64 /* ImageLoopViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CED06311DAB98810070BA64 /* ImageLoopViewCell.xib */; };
@@ -79,6 +80,7 @@
 		2C7310071D9E098A009D58BA /* SelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
 		2C81D9261DACD735007369FD /* UIImage+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 		2C81D92A1DACE351007369FD /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		2C9BF78D1DAE2895000F753A /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		2CAE94421DAA4A3000D17C12 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		2CED062F1DAB98760070BA64 /* ImageLoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoopView.swift; sourceTree = "<group>"; };
 		2CED06311DAB98810070BA64 /* ImageLoopViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageLoopViewCell.xib; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				2C730FFF1D9E098A009D58BA /* SwiftyJSON.swift */,
 				2C7310001D9E098A009D58BA /* Timer.swift */,
 				2CAE94421DAA4A3000D17C12 /* JSON.swift */,
+				2C9BF78D1DAE2895000F753A /* Layout.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				2C81D92B1DACE351007369FD /* Button.swift in Sources */,
 				2C73101A1D9E098A009D58BA /* SortAble.swift in Sources */,
 				2C7310101D9E098A009D58BA /* UIView+extension.swift in Sources */,
+				2C9BF78E1DAE2895000F753A /* Layout.swift in Sources */,
 				2C7310171D9E098A009D58BA /* Timer.swift in Sources */,
 				2CED06341DAB99E40070BA64 /* GradientView.swift in Sources */,
 				2C73100D1D9E098A009D58BA /* UINavigationController+extension.swift in Sources */,

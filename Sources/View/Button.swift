@@ -10,37 +10,41 @@ import UIKit
 
 enum ButtonImageTitlePostaion {}
 
-
-
 public class Button: UIView {
 
-    public var redPoint: UIView!
-    public var titleLabel: UILabel!
-    public var imageView: UIImageView!
+    public var redPoint = UIView()
+    public var titleLabel = UILabel()
+    public var imageView = UIImageView()
     
-    public var title: NSAttributedString?
+    public var title: NSAttributedString? {
+        didSet {
+            titleLabel.attributedText = title
+        }
+    }
+    
     public var touchAction: ((_ buttonTag: Int) -> Void) = {_ in }
     
     public var buttonGrayColor = UIColor(red:0.945, green:0.945, blue:0.945, alpha:1)
     
-    public init(frame: CGRect, title: NSAttributedString, image: UIImage, touchAction: @escaping ((_ buttonTag: Int) -> Void)) {
-        
-        self.imageView = UIImageView()
-        self.imageView.contentMode = .scaleAspectFit
-        self.imageView.clipsToBounds = true
-        self.imageView.image = image
-        
-        self.title = title
-        self.titleLabel = UILabel()
-        self.titleLabel.attributedText = title
-        self.titleLabel.textAlignment = .center
-        
-        self.touchAction = touchAction
-        
+    public override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupView()
+    }
+    
+    private func setupView() {
         
         self.addSubview(imageView)
         self.addSubview(titleLabel)
+        
+        self.imageView.contentMode = .scaleAspectFit
+        self.imageView.clipsToBounds = true
+        
+        self.titleLabel.textAlignment = .center
         
         let redPointFrame = CGRect(x: frame.size.width - 20, y: 20, width: 9, height: 9)
         self.redPoint = UIView(frame: redPointFrame)
@@ -59,7 +63,6 @@ public class Button: UIView {
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction(recongnizer:)))
         self.addGestureRecognizer(longPress)
-        
     }
     
     override public func didMoveToSuperview() {
@@ -69,31 +72,23 @@ public class Button: UIView {
     
     override public func updateConstraints() {
         super.updateConstraints()
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         // 设置约束
-        addConstraint(NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 15))
-        addConstraint(NSLayoutConstraint(item: imageView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 15))
-        addConstraint(NSLayoutConstraint(item: imageView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: -15))
-        addConstraint(NSLayoutConstraint(item: imageView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -30))
-        
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        layout(item: imageView, attribute: .top, to: self, constant: 15)
+        layout(item: imageView, attribute: .top, to: self, constant: 15)
+        layout(item: imageView, attribute: .left, to: self, constant: 15)
+        layout(item: imageView, attribute: .right, to: self, constant: -15)
+        layout(item: imageView, attribute: .bottom, to: self, constant: -30)
+
         // 设置高度
-        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 20))
+        layout(item: titleLabel, attribute: .height, to: nil, constant: 20)
+        
         // 设置约束
-        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -5))
+        layout(item: titleLabel, attribute: .left, to: self, constant: 0)
+        layout(item: titleLabel, attribute: .right, to: self, constant: 0)
+        layout(item: titleLabel, attribute: .bottom, to: self, constant: -5)
         
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    private func setupView() {
-        
-    }
     
     @objc private func tapAction() {
         self.touchAction(self.tag)
