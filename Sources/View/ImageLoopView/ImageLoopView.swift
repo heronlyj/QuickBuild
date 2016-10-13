@@ -122,11 +122,10 @@ public class ImageLoopView: UIView {
         addSubview(collectionView)
         
         // 自动布局
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        addConstraint(NSLayoutConstraint(item: collectionView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: collectionView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: collectionView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: collectionView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0))
+        al.layout(item: collectionView, attribute: .top, to: self, attribute: .top, constant: 0)
+        al.layout(item: collectionView, attribute: .left, to: self, attribute: .left, constant: 0)
+        al.layout(item: collectionView, attribute: .right, to: self, attribute: .right, constant: 0)
+        al.layout(item: collectionView, attribute: .bottom, to: self, attribute: .bottom, constant: 0)
         
         scrollCollectionView()
         setUpTimer()
@@ -134,6 +133,11 @@ public class ImageLoopView: UIView {
         // 旋转屏幕之后 cell 的大小改变因此需要 reload
         NotificationCenter.default.addObserver(forName: .UIDeviceOrientationDidChange, object: nil, queue: .main) { [weak self] (_) in
             self?.collectionView.reloadData()
+        }
+        
+        // 进入前台之后 再次开始自动滚动
+        NotificationCenter.default.addObserver(forName: .UIApplicationDidBecomeActive, object: nil, queue: .main) { [weak self](_) in
+            self?.setUpTimer()
         }
     }
     
@@ -223,10 +227,8 @@ extension ImageLoopView {
     }
     
     func killTimer() {
-        if timer != nil {
-            timer!.invalidate()
-            timer = nil
-        }
+        timer?.invalidate()
+        timer = nil
     }
     
     /**

@@ -19,6 +19,7 @@ public class PageView: UIView {
     public var titleIsShow = true
     public var flagViewIsShow = false
     
+    public var titleFont: UIFont = UIFont.systemFont(ofSize: 14)
     /// 设置颜色
     public var titleColor: UIColor = .black
     public var titleSelectedColor: UIColor = .gray
@@ -28,7 +29,6 @@ public class PageView: UIView {
     public var flagViewColor: UIColor = .red
     
     public var titleScrollViewHeight: CGFloat = 53
-    
     public var titleButtonWidth: CGFloat = 60
     
     var selectedButton: UIButton?
@@ -66,7 +66,7 @@ public class PageView: UIView {
         
         flagView = {
             let view = UIView(frame: CGRect(x: 0, y: titleScrollViewHeight - 3, width: titleButtonWidth, height: 3))
-            view.backgroundColor = .red
+            view.backgroundColor = flagViewColor
             return view
         }()
         
@@ -90,6 +90,7 @@ public class PageView: UIView {
                 button.tag = 100 + i
                 button.isSelected = i == 0
                 button.setTitle(titles[i], for: .normal)
+                button.titleLabel?.font = titleFont
                 button.setTitleColor(titleColor, for: .normal)
                 button.setTitleColor(titleSelectedColor, for: .selected)
                 button.addTarget(self, action: #selector(titleButtonTap(btn:)), for: .touchUpInside)
