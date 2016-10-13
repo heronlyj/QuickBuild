@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C51E9691DAF58EC00724B9C /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C51E9651DAF58EC00724B9C /* add@2x.png */; };
+		2C51E96A1DAF58EC00724B9C /* add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C51E9661DAF58EC00724B9C /* add@3x.png */; };
+		2C51E96B1DAF58EC00724B9C /* deleteFlag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C51E9671DAF58EC00724B9C /* deleteFlag@2x.png */; };
+		2C51E96C1DAF58EC00724B9C /* deleteFlag@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C51E9681DAF58EC00724B9C /* deleteFlag@3x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2C51E9571DAF50FA00724B9C /* QuickBuildBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickBuildBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C51E95A1DAF50FA00724B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C51E9651DAF58EC00724B9C /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
+		2C51E9661DAF58EC00724B9C /* add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@3x.png"; sourceTree = "<group>"; };
+		2C51E9671DAF58EC00724B9C /* deleteFlag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteFlag@2x.png"; sourceTree = "<group>"; };
+		2C51E9681DAF58EC00724B9C /* deleteFlag@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deleteFlag@3x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C51E9541DAF50FA00724B9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C51E94E1DAF50FA00724B9C = {
+			isa = PBXGroup;
+			children = (
+				2C51E9601DAF588300724B9C /* Resources */,
+				2C51E9591DAF50FA00724B9C /* QuickBuildBundle */,
+				2C51E9581DAF50FA00724B9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C51E9581DAF50FA00724B9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C51E9571DAF50FA00724B9C /* QuickBuildBundle.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C51E9591DAF50FA00724B9C /* QuickBuildBundle */ = {
+			isa = PBXGroup;
+			children = (
+				2C51E95A1DAF50FA00724B9C /* Info.plist */,
+			);
+			path = QuickBuildBundle;
+			sourceTree = "<group>";
+		};
+		2C51E9601DAF588300724B9C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C51E9651DAF58EC00724B9C /* add@2x.png */,
+				2C51E9661DAF58EC00724B9C /* add@3x.png */,
+				2C51E9671DAF58EC00724B9C /* deleteFlag@2x.png */,
+				2C51E9681DAF58EC00724B9C /* deleteFlag@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C51E9561DAF50FA00724B9C /* QuickBuildBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C51E95D1DAF50FA00724B9C /* Build configuration list for PBXNativeTarget "QuickBuildBundle" */;
+			buildPhases = (
+				2C51E9531DAF50FA00724B9C /* Sources */,
+				2C51E9541DAF50FA00724B9C /* Frameworks */,
+				2C51E9551DAF50FA00724B9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickBuildBundle;
+			productName = QuickBuildBundle;
+			productReference = 2C51E9571DAF50FA00724B9C /* QuickBuildBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C51E94F1DAF50FA00724B9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = heronlyj;
+				TargetAttributes = {
+					2C51E9561DAF50FA00724B9C = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = DMEGL5CEM3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2C51E9521DAF50FA00724B9C /* Build configuration list for PBXProject "QuickBuildBundle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2C51E94E1DAF50FA00724B9C;
+			productRefGroup = 2C51E9581DAF50FA00724B9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C51E9561DAF50FA00724B9C /* QuickBuildBundle */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C51E9551DAF50FA00724B9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C51E96A1DAF58EC00724B9C /* add@3x.png in Resources */,
+				2C51E96C1DAF58EC00724B9C /* deleteFlag@3x.png in Resources */,
+				2C51E9691DAF58EC00724B9C /* add@2x.png in Resources */,
+				2C51E96B1DAF58EC00724B9C /* deleteFlag@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C51E9531DAF50FA00724B9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2C51E95B1DAF50FA00724B9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2C51E95C1DAF50FA00724B9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2C51E95E1DAF50FA00724B9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = DMEGL5CEM3;
+				INFOPLIST_FILE = QuickBuildBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heornlyj.QuickBuildBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.0;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		2C51E95F1DAF50FA00724B9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = DMEGL5CEM3;
+				INFOPLIST_FILE = QuickBuildBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heornlyj.QuickBuildBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.0;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C51E9521DAF50FA00724B9C /* Build configuration list for PBXProject "QuickBuildBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C51E95B1DAF50FA00724B9C /* Debug */,
+				2C51E95C1DAF50FA00724B9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C51E95D1DAF50FA00724B9C /* Build configuration list for PBXNativeTarget "QuickBuildBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C51E95E1DAF50FA00724B9C /* Debug */,
+				2C51E95F1DAF50FA00724B9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C51E94F1DAF50FA00724B9C /* Project object */;
+}

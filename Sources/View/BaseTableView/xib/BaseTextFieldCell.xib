@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BaseTextFieldCell" id="pFe-4p-fUH" customClass="BaseTextFieldCell" customModule="zhysq" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pFe-4p-fUH" id="HnM-Oc-WiB">
+                <frame key="frameInset" width="375" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 活动最低人数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqp-Ct-qgz">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="tpp-Te-Nwm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="keo-bU-Lxe">
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eqp-Ct-qgz" firstAttribute="leading" secondItem="HnM-Oc-WiB" secondAttribute="leading" constant="10" id="8U2-g3-Jq6"/>
+                    <constraint firstAttribute="bottom" secondItem="eqp-Ct-qgz" secondAttribute="bottom" id="TX2-EJ-7lc"/>
+                    <constraint firstAttribute="bottom" secondItem="keo-bU-Lxe" secondAttribute="bottom" id="U5v-w3-OoP"/>
+                    <constraint firstItem="keo-bU-Lxe" firstAttribute="top" secondItem="HnM-Oc-WiB" secondAttribute="top" id="fQO-DJ-F2e"/>
+                    <constraint firstItem="eqp-Ct-qgz" firstAttribute="top" secondItem="HnM-Oc-WiB" secondAttribute="top" id="jDv-zJ-C9P"/>
+                    <constraint firstItem="keo-bU-Lxe" firstAttribute="leading" secondItem="eqp-Ct-qgz" secondAttribute="trailing" id="jeY-Uk-C1A"/>
+                    <constraint firstAttribute="trailing" secondItem="keo-bU-Lxe" secondAttribute="trailing" constant="10" id="tj5-Cb-UIA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="eqp-Ct-qgz" id="4rv-Ky-JtF"/>
+                <outlet property="textField" destination="keo-bU-Lxe" id="4D8-u5-cmE"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

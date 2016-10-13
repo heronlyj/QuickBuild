@@ -25,13 +25,14 @@ extension UIView {
 
 
 public protocol LoadNibable {}
+extension UIView: LoadNibable {}
 
 public extension LoadNibable where Self: UIView {
     
     static func loadFromNib() -> Self? {
-        return Bundle.main.loadNibNamed(String(describing: self), owner: nil, options: nil)?.first as? Self
+        return Bundle.main.loadNibNamed(String(describing: Self.self), owner: nil, options: nil)?.first as? Self
     }
     
 }
 
-extension UIView: LoadNibable {}
+

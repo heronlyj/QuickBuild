@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 public extension UIImage {
     
@@ -19,4 +20,42 @@ public extension UIImage {
         return colorImage
     }
     
+}
+
+
+public struct ImageAssetItem {
+    public var url: String?
+    public var name: String?
+    public var image: UIImage?
+    public var asset: PHAsset?
+    
+    public init(url: String? = nil, name: String? = nil, image: UIImage? = nil, asset: PHAsset? = nil) {
+        self.url = url
+        self.name = name
+        self.image = image
+        self.asset = asset
+    }
+    
+    public func assetSource(placeHolder: String = "", roundCorner: Bool = false) -> ImageAssetSource? {
+        if let name = name {
+            return ImageAssetSource.name(name: name)
+        }
+        if let url = url {
+            return ImageAssetSource.urlStr(urlStr: url, placeHolder: placeHolder, roundCorner: roundCorner)
+        }
+        if let image = image {
+            return ImageAssetSource.image(image: image)
+        }
+        if let asset = asset {
+            return ImageAssetSource.asset(asset: asset)
+        }
+        return nil
+    }
+}
+
+public enum ImageAssetSource {
+    case name(name: String)
+    case asset(asset: PHAsset)
+    case image(image: UIImage)
+    case urlStr(urlStr: String, placeHolder: String, roundCorner: Bool)
 }

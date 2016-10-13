@@ -25,8 +25,6 @@ extension DispatchQueue {
     public static func delay(seconds: TimeInterval, completion: @escaping ()->()) {
         let after = DispatchTime.now() + seconds
         DispatchQueue.main.asyncAfter(deadline: after, execute: completion)
-        
-        
     }
 }
 

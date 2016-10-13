@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BaseLabelCell" id="aiQ-Uh-PHe" customClass="BaseLabelCell" customModule="zhysq" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aiQ-Uh-PHe" id="yW2-Ye-0hj">
+                <frame key="frameInset" width="375" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjj-jQ-OqT">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动分类" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JF-M7-qSb">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="jg4-03-Yye"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Pjj-jQ-OqT" firstAttribute="top" secondItem="yW2-Ye-0hj" secondAttribute="top" id="4Xg-6O-XWa"/>
+                    <constraint firstAttribute="bottom" secondItem="Pjj-jQ-OqT" secondAttribute="bottom" id="GGp-ca-0r4"/>
+                    <constraint firstItem="2JF-M7-qSb" firstAttribute="top" secondItem="yW2-Ye-0hj" secondAttribute="top" id="TUh-3f-0xf"/>
+                    <constraint firstAttribute="bottom" secondItem="2JF-M7-qSb" secondAttribute="bottom" id="TZC-7w-WHh"/>
+                    <constraint firstAttribute="trailing" secondItem="Pjj-jQ-OqT" secondAttribute="trailing" constant="10" id="aWO-6p-lBI"/>
+                    <constraint firstItem="Pjj-jQ-OqT" firstAttribute="leading" secondItem="2JF-M7-qSb" secondAttribute="trailing" id="n5P-xh-kPB"/>
+                    <constraint firstItem="2JF-M7-qSb" firstAttribute="leading" secondItem="yW2-Ye-0hj" secondAttribute="leading" constant="10" id="qtL-9j-7Mh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="Pjj-jQ-OqT" id="LXR-sO-sGO"/>
+                <outlet property="nameLabel" destination="2JF-M7-qSb" id="1q0-St-0k3"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

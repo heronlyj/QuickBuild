@@ -10,12 +10,14 @@ import UIKit
 
 
 extension UIStoryboard {
+    
     public struct Name {
         public var rawValue: String
         public init(_ rawValue: String) {
             self.rawValue = rawValue
         }
     }
+    
 }
 
 extension UIStoryboard {

@@ -96,7 +96,7 @@ public class PageView: UIView {
                 button.addTarget(self, action: #selector(titleButtonTap(btn:)), for: .touchUpInside)
                 button.frame = CGRect(x: CGFloat(i) * titleButtonWidth, y: 0, width: titleButtonWidth, height: self.titleScrollViewHeight)
                 
-                printLogDebug(button.frame)
+//                printLogDebug(button.frame)
                 
                 if button.isSelected {
                     selectedButton = button
