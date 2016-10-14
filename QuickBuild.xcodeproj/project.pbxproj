@@ -39,7 +39,6 @@
 		2C7310131D9E098A009D58BA /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FFC1D9E098A009D58BA /* Helper.swift */; };
 		2C7310141D9E098A009D58BA /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FFD1D9E098A009D58BA /* Listener.swift */; };
 		2C7310151D9E098A009D58BA /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FFE1D9E098A009D58BA /* NotificationManager.swift */; };
-		2C7310161D9E098A009D58BA /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C730FFF1D9E098A009D58BA /* SwiftyJSON.swift */; };
 		2C7310171D9E098A009D58BA /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310001D9E098A009D58BA /* Timer.swift */; };
 		2C7310181D9E098A009D58BA /* InitAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310021D9E098A009D58BA /* InitAble.swift */; };
 		2C7310191D9E098A009D58BA /* RotateAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7310031D9E098A009D58BA /* RotateAble.swift */; };
@@ -97,7 +96,6 @@
 		2C730FFC1D9E098A009D58BA /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		2C730FFD1D9E098A009D58BA /* Listener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
 		2C730FFE1D9E098A009D58BA /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		2C730FFF1D9E098A009D58BA /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		2C7310001D9E098A009D58BA /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		2C7310021D9E098A009D58BA /* InitAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitAble.swift; sourceTree = "<group>"; };
 		2C7310031D9E098A009D58BA /* RotateAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateAble.swift; sourceTree = "<group>"; };
@@ -272,12 +270,11 @@
 				2C730FFA1D9E098A009D58BA /* AlertHelper.swift */,
 				2C730FFB1D9E098A009D58BA /* Docker.swift */,
 				2C730FFC1D9E098A009D58BA /* Helper.swift */,
-				2C730FFD1D9E098A009D58BA /* Listener.swift */,
-				2C730FFE1D9E098A009D58BA /* NotificationManager.swift */,
-				2C730FFF1D9E098A009D58BA /* SwiftyJSON.swift */,
-				2C7310001D9E098A009D58BA /* Timer.swift */,
 				2CAE94421DAA4A3000D17C12 /* JSON.swift */,
 				2C9BF78D1DAE2895000F753A /* Layout.swift */,
+				2C730FFD1D9E098A009D58BA /* Listener.swift */,
+				2C730FFE1D9E098A009D58BA /* NotificationManager.swift */,
+				2C7310001D9E098A009D58BA /* Timer.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -446,7 +443,6 @@
 				2C73100C1D9E098A009D58BA /* String+extension.swift in Sources */,
 				2C7310141D9E098A009D58BA /* Listener.swift in Sources */,
 				2C51E9471DAF422300724B9C /* PageView.swift in Sources */,
-				2C7310161D9E098A009D58BA /* SwiftyJSON.swift in Sources */,
 				2C7310091D9E098A009D58BA /* Int+extension.swift in Sources */,
 				2C7310151D9E098A009D58BA /* NotificationManager.swift in Sources */,
 				2C51E9701DAF5AA300724B9C /* Bundle+extension.swift in Sources */,
