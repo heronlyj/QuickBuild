@@ -23,7 +23,7 @@ public protocol ImageCollectionViewDelegate: class {
     ///
     func imageView(_ imageView: UIImageView, willShowAt indexPath: IndexPath)
     
-    func collectionView(_ collectionView: ImageCollectionView, didSelectedAt indexPath: IndexPath)
+    func collectionView(_ collectionView: ImageCollectionView, didSelectedAt indexPath: IndexPath, removeComplete: (Bool) -> Void)
     
 }
 
@@ -35,25 +35,22 @@ public class ImageCollectionView: UICollectionView {
         return imageDelegate?.datesNumber ?? 0
     }
     
-    public lazy var itemSize: CGSize = {
+    public static var itemSize: CGSize = {
         // 考虑到屏幕旋转，因此需要保持 cell 的宽度
         let itemHeight = min(Screen.width, Screen.height)/4
         return CGSize(width: itemHeight, height: itemHeight)
     }()
     
     // collectionView 全部显示的高度，内嵌在 tableViewCell 中动态计算 cell 高度使用
-    public var height: CGFloat {
-        return CGFloat(rowNumber) * itemSize.height
-    }
-    
-    public var rowNumber: Int {
-        guard let count = imageDelegate?.datesNumber else { return 1 }
+    public static func height(boundsWidth: CGFloat, datasNumber count: Int, isShowModel: Bool) -> CGFloat {
         // 每行的个数
-        let row: Int = Int(bounds.width/itemSize.width)
+        let countPerRow = Int(boundsWidth/ImageCollectionView.itemSize.width)
         // 共有多少个 cell
         let itemCount = count + (isShowModel ? 0 : 1)
         // 共有多少行
-        return itemCount / row + (itemCount % row == 0 ? 0 : 1)
+        let row = (itemCount / countPerRow) + (itemCount % countPerRow == 0 ? 0 : 1)
+        
+        return CGFloat(row) * ImageCollectionView.itemSize.height
     }
     
     public weak var imageDelegate: ImageCollectionViewDelegate?
@@ -71,7 +68,7 @@ public class ImageCollectionView: UICollectionView {
     func setupView() {
         
         if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.itemSize = itemSize
+            flowLayout.itemSize = ImageCollectionView.itemSize
             flowLayout.minimumLineSpacing = .leastNonzeroMagnitude
             flowLayout.minimumInteritemSpacing = .leastNonzeroMagnitude
         }
@@ -94,13 +91,15 @@ extension ImageCollectionView: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withType: ImageCollectionViewCell.self, for: indexPath)!
-        if !isShowModel && indexPath.item == itemCount {
+        
+        if indexPath.item == itemCount {
             cell.xImageView.isHidden = true
             cell.imageView.image = imageDelegate?.selectModelDefaultImage ?? UIImage(named: "add", in: Bundle.resourcesBundle, compatibleWith: nil)
         } else {
-            cell.xImageView.isHidden = false
+            cell.xImageView.isHidden = isShowModel
             imageDelegate?.imageView(cell.imageView, willShowAt: indexPath)
         }
+        
         return cell
     }
     
@@ -110,17 +109,26 @@ extension ImageCollectionView: UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        imageDelegate?.collectionView(self, didSelectedAt: indexPath)
+        
+        imageDelegate?.collectionView(self, didSelectedAt: indexPath) { [weak collectionView] finish in
+            collectionView?.performBatchUpdates({
+                collectionView?.deleteItems(at: [indexPath])
+                }, completion: nil)
+        }
     }
 
 }
 
 class ImageCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var xImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        xImageView.image = UIImage(named: "deleteFlag", in: Bundle.resourcesBundle, compatibleWith: nil)
+        
         imageView.clipsToBounds = true
         imageView.backgroundColor = .lightGray
     }

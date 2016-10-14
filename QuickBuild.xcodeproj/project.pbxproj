@@ -18,7 +18,7 @@
 		2C51E94C1DAF427800724B9C /* ImageCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C51E94A1DAF427800724B9C /* ImageCollectionView.swift */; };
 		2C51E94D1DAF427800724B9C /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C51E94B1DAF427800724B9C /* ImageCollectionViewCell.xib */; };
 		2C51E9701DAF5AA300724B9C /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C51E96F1DAF5AA300724B9C /* Bundle+extension.swift */; };
-		2C51E9731DAF5AF400724B9C /* QuickBuildBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2C51E9721DAF5AF400724B9C /* QuickBuildBundle.bundle */; };
+		2C51E9731DAF5AF400724B9C /* QuickBuild.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2C51E9721DAF5AF400724B9C /* QuickBuild.bundle */; };
 		2C51E97B1DAF5E2500724B9C /* BaseImageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C51E9751DAF5E2400724B9C /* BaseImageListCell.xib */; };
 		2C51E97C1DAF5E2500724B9C /* BaseLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C51E9761DAF5E2400724B9C /* BaseLabelCell.xib */; };
 		2C51E97D1DAF5E2500724B9C /* BaseSingleLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C51E9771DAF5E2400724B9C /* BaseSingleLabelCell.xib */; };
@@ -76,7 +76,7 @@
 		2C51E94A1DAF427800724B9C /* ImageCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionView.swift; sourceTree = "<group>"; };
 		2C51E94B1DAF427800724B9C /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		2C51E96F1DAF5AA300724B9C /* Bundle+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
-		2C51E9721DAF5AF400724B9C /* QuickBuildBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QuickBuildBundle.bundle; sourceTree = "<group>"; };
+		2C51E9721DAF5AF400724B9C /* QuickBuild.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QuickBuild.bundle; sourceTree = "<group>"; };
 		2C51E9751DAF5E2400724B9C /* BaseImageListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseImageListCell.xib; sourceTree = "<group>"; };
 		2C51E9761DAF5E2400724B9C /* BaseLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseLabelCell.xib; sourceTree = "<group>"; };
 		2C51E9771DAF5E2400724B9C /* BaseSingleLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseSingleLabelCell.xib; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 		2C51E9711DAF5AF400724B9C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2C51E9721DAF5AF400724B9C /* QuickBuildBundle.bundle */,
+				2C51E9721DAF5AF400724B9C /* QuickBuild.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -415,7 +415,7 @@
 				2C51E97F1DAF5E2500724B9C /* BaseTextFieldCell.xib in Resources */,
 				2C51E9801DAF5E2500724B9C /* BaseTextViewCell.xib in Resources */,
 				2C51E97E1DAF5E2500724B9C /* BaseSwitchCell.xib in Resources */,
-				2C51E9731DAF5AF400724B9C /* QuickBuildBundle.bundle in Resources */,
+				2C51E9731DAF5AF400724B9C /* QuickBuild.bundle in Resources */,
 				2C51E97D1DAF5E2500724B9C /* BaseSingleLabelCell.xib in Resources */,
 				2C51E94D1DAF427800724B9C /* ImageCollectionViewCell.xib in Resources */,
 				2CED06321DAB98810070BA64 /* ImageLoopViewCell.xib in Resources */,

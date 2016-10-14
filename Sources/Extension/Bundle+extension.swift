@@ -13,7 +13,7 @@ extension Bundle {
     static var resourcesBundle: Bundle? {
         let frameworkBundle = Bundle(for: ImageCollectionView.self)
         guard
-            let path = frameworkBundle.url(forResource: "QuickBuildBundle", withExtension: "bundle")
+            let path = frameworkBundle.url(forResource: "QuickBuild", withExtension: "bundle")
             else { return nil }
         return Bundle(url: path)
     }

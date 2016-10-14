@@ -3,20 +3,25 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="DvD-cQ-O01" customClass="ImageCollectionViewCell" customModule="QuickBuild" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="167" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="167" height="150"/>
+                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aYY-Xx-8JW"/>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deleteFlag.png" translatesAutoresizingMaskIntoConstraints="NO" id="ete-zt-HgS">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aYY-Xx-8JW">
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="aYY-Xx-8JW" secondAttribute="height" multiplier="1:1" id="aAA-OL-FDz"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ete-zt-HgS">
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="W4Q-4b-pPy"/>
                             <constraint firstAttribute="width" constant="18" id="eDk-GR-Y8p"/>
@@ -25,12 +30,11 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="aYY-Xx-8JW" secondAttribute="trailing" constant="10" id="6Bj-t3-GoC"/>
-                <constraint firstItem="ete-zt-HgS" firstAttribute="top" secondItem="aYY-Xx-8JW" secondAttribute="top" constant="-9" id="7QF-7C-ZJT"/>
-                <constraint firstItem="ete-zt-HgS" firstAttribute="trailing" secondItem="aYY-Xx-8JW" secondAttribute="trailing" constant="9" id="FUq-rF-iyI"/>
-                <constraint firstItem="aYY-Xx-8JW" firstAttribute="top" secondItem="DvD-cQ-O01" secondAttribute="top" constant="10" id="Jgx-Qk-gqv"/>
-                <constraint firstAttribute="bottom" secondItem="aYY-Xx-8JW" secondAttribute="bottom" constant="10" id="QQU-id-k2N"/>
-                <constraint firstItem="aYY-Xx-8JW" firstAttribute="leading" secondItem="DvD-cQ-O01" secondAttribute="leading" constant="10" id="WCe-3q-rem"/>
+                <constraint firstItem="ete-zt-HgS" firstAttribute="top" secondItem="aYY-Xx-8JW" secondAttribute="top" constant="-7" id="7QF-7C-ZJT"/>
+                <constraint firstItem="aYY-Xx-8JW" firstAttribute="centerX" secondItem="DvD-cQ-O01" secondAttribute="centerX" id="Dpn-g8-jJL"/>
+                <constraint firstItem="ete-zt-HgS" firstAttribute="trailing" secondItem="aYY-Xx-8JW" secondAttribute="trailing" constant="7" id="FUq-rF-iyI"/>
+                <constraint firstItem="aYY-Xx-8JW" firstAttribute="width" secondItem="DvD-cQ-O01" secondAttribute="width" constant="-23" id="MAb-xP-FSh"/>
+                <constraint firstItem="aYY-Xx-8JW" firstAttribute="centerY" secondItem="DvD-cQ-O01" secondAttribute="centerY" id="O6T-IU-Hhz"/>
             </constraints>
             <size key="customSize" width="167" height="150"/>
             <connections>
@@ -40,7 +44,4 @@
             <point key="canvasLocation" x="-72.5" y="38"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="deleteFlag.png" width="20" height="20"/>
-    </resources>
 </document>
