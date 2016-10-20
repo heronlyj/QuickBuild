@@ -42,7 +42,7 @@ extension LayoutConstraint {
 
 extension UIView {
     
-    /// Layout mean AutoLayout
+    /// AutoLayout
     public var al: Layout {
         get { return Layout(self) }
         set { }

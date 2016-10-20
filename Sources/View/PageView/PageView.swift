@@ -8,10 +8,7 @@
 
 import UIKit
 
-public protocol PageViewDelegate: class {
-    func pageView(view: PageView, scrollAt index: Int)
-}
-
+/// 一个 controller 横向滚动多个 view 的组件, 常见为顶部一个 scrollView 多个 button，每个 button 对应下面一个 scrollView 的 tableView
 public class PageView: UIView {
     
     public weak var delegate: PageViewDelegate?
@@ -60,6 +57,8 @@ public class PageView: UIView {
         super.init(coder: aDecoder)
     }
     
+    
+    /// 初始化各个参数之后，调用此方式来初始化 view
     public func initBaseView() {
         
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -74,6 +73,7 @@ public class PageView: UIView {
             
             let frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.titleScrollViewHeight)
             let scrollView = UIScrollView(frame: frame)
+            
             scrollView.delegate = self
             scrollView.bounces = false
             scrollView.backgroundColor = .white
@@ -86,17 +86,17 @@ public class PageView: UIView {
             for i in 0..<titles.count {
                 
                 let button = UIButton(type: .custom)
-                button.backgroundColor = .white
+                
                 button.tag = 100 + i
                 button.isSelected = i == 0
-                button.setTitle(titles[i], for: .normal)
+                button.backgroundColor = .white
                 button.titleLabel?.font = titleFont
+                button.setTitle(titles[i], for: .normal)
                 button.setTitleColor(titleColor, for: .normal)
                 button.setTitleColor(titleSelectedColor, for: .selected)
                 button.addTarget(self, action: #selector(titleButtonTap(btn:)), for: .touchUpInside)
-                button.frame = CGRect(x: CGFloat(i) * titleButtonWidth, y: 0, width: titleButtonWidth, height: self.titleScrollViewHeight)
                 
-//                printLogDebug(button.frame)
+                button.frame = CGRect(x: CGFloat(i) * titleButtonWidth, y: 0, width: titleButtonWidth, height: self.titleScrollViewHeight)
                 
                 if button.isSelected {
                     selectedButton = button
@@ -195,3 +195,16 @@ extension PageView: UIScrollViewDelegate {
     }
     
 }
+
+
+
+/// <#Description#>
+public protocol PageViewDelegate: class {
+    
+    /// <#Description#>
+    ///
+    /// - parameter view:  <#view description#>
+    /// - parameter index: <#index description#>
+    func pageView(view: PageView, scrollAt index: Int)
+}
+

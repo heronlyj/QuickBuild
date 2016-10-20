@@ -29,26 +29,8 @@ public protocol JSONSerializable {
     var jsonRepresentation: JSONDictionary { get }
 }
 
-// 反射获取参数
-public extension JSONSerializable where Self: Any {
-    
-    var type: String {
-        return String(describing: Mirror(reflecting: self).subjectType)
-    }
-    
-    var jsonRepresentation: JSONDictionary {
-        
-        var jsonDic: JSONDictionary = [:]
-        
-        let mirror = Mirror(reflecting: self)
-        for child in mirror.children {
-            guard let key = child.label else { continue }
-            jsonDic[key] = child.value
-        }
-        
-        return jsonDic
-    }
-}
+//// 反射获取参数
+//public extension JSONSerializable where Self: Any {}
 
 
 /// Errors for deserializing JSON representations

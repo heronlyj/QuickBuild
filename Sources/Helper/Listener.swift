@@ -29,7 +29,13 @@ public class ListenAble<T> {
     
     public typealias SetterAction = (T) -> Void
     
-    public var value: T
+    public var value: T {
+        didSet {
+            listenerSet.forEach {
+                $0.action(value)
+            }
+        }
+    }
     
     var setterAction: SetterAction
     var listenerSet = Set<Listener<T>>()

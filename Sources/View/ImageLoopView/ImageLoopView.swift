@@ -8,52 +8,8 @@
 
 import UIKit
 
-class ImageLoopViewCell: UICollectionViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleBackgroundView: UIView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-    }
-}
 
-/**
- * ImageLoopViewDelegate
- */
-public protocol ImageLoopViewDelegate: class {
-    
-    /// 需要显示的个数
-    var dataSourceCount: Int { get }
-    
-    /// 是否隐藏 title
-    var titleIsHidden: Bool { get }
-    
-    /// 针对特定 cell 定制停留时间
-    ///
-    /// - parameter index: 下标
-    func stopTimeInteval(at index: Int) -> TimeInterval
-    
-    /// 当前显示的 cell
-    ///
-    /// - parameter view:       ImageLoopView
-    /// - parameter index:      current index
-    /// - parameter imageView:  current imageView
-    /// - parameter titleLabel: current label
-    func loopView(_ view: ImageLoopView, loopAt index: Int, imageView: UIImageView, titleLabel: UILabel)
-    
-    /**
-     图片点击的回调事件
-     
-     - parameter scrollView:   ImageLoopView
-     - parameter tapImageView: 点击的图片
-     - parameter atIndex:      当前点击的下标
-     */
-    func loopView(_ view: ImageLoopView, tapAt index: Int)
-}
-
+/// 轮播组件， 支持显示每页标题，每张图片可通过代理设置停留时间
 public class ImageLoopView: UIView {
     
     public var collectionView: UICollectionView!
@@ -67,7 +23,7 @@ public class ImageLoopView: UIView {
     }
     
     fileprivate var timer: Timer?
-    fileprivate let multipleNumber = 10000
+    fileprivate let multipleNumber = 10000 // cell 个数的倍数
     fileprivate var autoLoop: Bool = true
     
     fileprivate var scrollTimeInterval: TimeInterval = 4.0
@@ -100,6 +56,7 @@ public class ImageLoopView: UIView {
     func setup() {
         
         flowLayout = UICollectionViewFlowLayout()
+        
         flowLayout.sectionInset = .zero
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumLineSpacing = .leastNonzeroMagnitude
@@ -111,13 +68,13 @@ public class ImageLoopView: UIView {
         let nib = UINib(nibName: ImageLoopViewCell.reuseId, bundle: bundle)
         collectionView.register(nib, forCellWithReuseIdentifier: ImageLoopViewCell.reuseId)
         
-        collectionView.backgroundColor = UIColor.clear
-        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .clear
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
         
-        collectionView.isPagingEnabled = true
-        collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.isPagingEnabled = true
         
         addSubview(collectionView)
         
@@ -154,8 +111,12 @@ extension ImageLoopView: UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withType: ImageLoopViewCell.self, for: indexPath)!
         let currentindex = getCurrentIndex(indexPath: indexPath)
+        
+        // title 是否隐藏
         cell.titleLabel.isHidden = delegate?.titleIsHidden ?? true
         cell.titleBackgroundView.isHidden = delegate?.titleIsHidden ?? true
+        
+        // 加载 cell imageView
         delegate?.loopView(self, loopAt: currentindex, imageView: cell.imageView, titleLabel: cell.titleLabel)
         return cell
     }
@@ -242,4 +203,49 @@ extension ImageLoopView {
         }
     }
     
+}
+
+class ImageLoopViewCell: UICollectionViewCell {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleBackgroundView: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+    }
+}
+
+
+/// ImageLoopViewDelegate
+public protocol ImageLoopViewDelegate: class {
+    
+    /// 需要显示的个数
+    var dataSourceCount: Int { get }
+    
+    /// 是否隐藏 title
+    var titleIsHidden: Bool { get }
+    
+    /// 针对特定 cell 定制停留时间
+    ///
+    /// - parameter index: 下标
+    func stopTimeInteval(at index: Int) -> TimeInterval
+    
+    /// 当前显示的 cell
+    ///
+    /// - parameter view:       ImageLoopView
+    /// - parameter index:      current index
+    /// - parameter imageView:  current imageView
+    /// - parameter titleLabel: current label
+    func loopView(_ view: ImageLoopView, loopAt index: Int, imageView: UIImageView, titleLabel: UILabel)
+    
+    /**
+     图片点击的回调事件
+     
+     - parameter scrollView:   ImageLoopView
+     - parameter tapImageView: 点击的图片
+     - parameter atIndex:      当前点击的下标
+     */
+    func loopView(_ view: ImageLoopView, tapAt index: Int)
 }

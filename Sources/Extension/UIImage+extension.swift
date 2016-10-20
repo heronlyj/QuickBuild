@@ -51,6 +51,24 @@ public struct ImageAssetItem {
         }
         return nil
     }
+    
+    public func imageFromAsset(_ complete: @escaping (UIImage?) -> Void) {
+        if let asset = asset {
+            
+            let option = PHImageRequestOptions()
+            option.resizeMode = .fast
+            option.deliveryMode = .highQualityFormat
+            
+            PHImageManager.default().requestImage(
+                for         : asset,
+                targetSize  : Screen.size,
+                contentMode : .aspectFill,
+                options     : option)
+            { (image: UIImage?, info: [AnyHashable: Any]?) in
+                complete(image)
+            }
+        }
+    }
 }
 
 public enum ImageAssetSource {
