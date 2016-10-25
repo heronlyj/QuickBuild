@@ -8,7 +8,8 @@
 
 import UIKit
 
-protocol PopControlAble {
+// navigationController 之前的一次判断 是否可以 pop 
+public protocol PopControlAble {
     func shouldPop(controller: UINavigationController) -> Bool
 }
 

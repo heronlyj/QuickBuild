@@ -79,10 +79,7 @@ public class ImageLoopView: UIView {
         addSubview(collectionView)
         
         // 自动布局
-        al.layout(item: collectionView, attribute: .top, to: self, attribute: .top, constant: 0)
-        al.layout(item: collectionView, attribute: .left, to: self, attribute: .left, constant: 0)
-        al.layout(item: collectionView, attribute: .right, to: self, attribute: .right, constant: 0)
-        al.layout(item: collectionView, attribute: .bottom, to: self, attribute: .bottom, constant: 0)
+        al.layout(item: collectionView, insert: .zero)
         
         scrollCollectionView()
         setUpTimer()

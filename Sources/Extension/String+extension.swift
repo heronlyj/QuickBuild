@@ -20,11 +20,24 @@ extension String {
         let pred = NSPredicate(format: "SELF MATCHES %@", pattern)
         return pred.evaluate(with: self)
     }
+    
 
 }
 
 
 extension String {
+    
+    public var ecodeToURL: String {
+        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self
+    }
+    
+    public var escapeForURL: String {
+        let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
+        let subDelimitersToEncode = "!$&'()*+,;="
+        var allowedCharacterSet = CharacterSet.urlQueryAllowed
+        allowedCharacterSet.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
+        return self.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet) ?? self
+    }
     
     /// Returns a new string made from the `String` by replacing all characters not in the unreserved
     /// character set (As defined by RFC3986) with percent encoded characters.

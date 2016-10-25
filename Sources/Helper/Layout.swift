@@ -20,24 +20,32 @@ public struct Layout {
 
 extension Layout {
 
-    public func layout(item: UIView, attribute: NSLayoutAttribute, relatedBy: NSLayoutRelation = .equal, to: UIView?, attribute toAttribute: NSLayoutAttribute, multiplier: CGFloat = 1, constant: CGFloat) {
+    public func layout(item: UIView, attribute: NSLayoutAttribute, relatedBy: NSLayoutRelation = .equal, to toItem: UIView?, attribute toAttribute: NSLayoutAttribute, multiplier: CGFloat = 1, constant: CGFloat) {
         
         if item.translatesAutoresizingMaskIntoConstraints {
             item.translatesAutoresizingMaskIntoConstraints = false
         }
         
-        view.addConstraint(NSLayoutConstraint(item: item, attribute: attribute, relatedBy: relatedBy, toItem: to, attribute: toAttribute, multiplier: multiplier, constant: constant))
+        view.addConstraint(NSLayoutConstraint(item: item, attribute: attribute, relatedBy: relatedBy, toItem: toItem, attribute: toAttribute, multiplier: multiplier, constant: constant))
+    }
+    
+    public func layout(item: UIView, insert: UIEdgeInsets) {
+        layout(item: item, attribute: .top, to: view, attribute: .top, constant: insert.top)
+        layout(item: item, attribute: .left, to: view, attribute: .left, constant: insert.left)
+        layout(item: item, attribute: .right, to: view, attribute: .right, constant: insert.right)
+        layout(item: item, attribute: .bottom, to: view, attribute: .bottom, constant: insert.bottom)
     }
     
 }
 
-extension LayoutConstraint {
-    
-    public convenience init(item: UIView, attribute: NSLayoutAttribute, relatedBy: NSLayoutRelation = .equal, to: UIView?, multiplier: CGFloat = 1, constant: CGFloat) {
-        self.init(item: item, attribute: attribute, relatedBy: NSLayoutRelation.equal, toItem: to, attribute: attribute, multiplier: 1, constant: constant)
-    }
-    
-}
+//
+//extension LayoutConstraint {
+//    
+//    public convenience init(item: UIView, attribute: NSLayoutAttribute, relatedBy: NSLayoutRelation = .equal, to: UIView?, multiplier: CGFloat = 1, constant: CGFloat) {
+//        self.init(item: item, attribute: attribute, relatedBy: NSLayoutRelation.equal, toItem: to, attribute: attribute, multiplier: 1, constant: constant)
+//    }
+//    
+//}
 
 
 extension UIView {
