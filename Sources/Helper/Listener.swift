@@ -31,6 +31,7 @@ public class ListenAble<T> {
     
     public var value: T {
         didSet {
+            setterAction(value)
             listenerSet.forEach {
                 $0.action(value)
             }
